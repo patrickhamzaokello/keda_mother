@@ -31,10 +31,10 @@ body a:hover {
 }
 
 .header {
-  background: #1f102d;
+  background: #331354;
   padding: 10px;
   color: #aaaaaa;
-  border-bottom: 1px solid #1f102d;
+  border-bottom: 1px solid #331354;
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -1573,7 +1573,7 @@ ul {
 }
 
 .current-track {
-  background: #1f102d;
+  background: #331354;
   padding: 5px 15px;
   display: flex;
   flex-flow: row wrap;

@@ -60,24 +60,51 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mwonyaa Music</title>
+    <title>Mwonya Stream</title>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <meta name="theme-color" content="#140721"/>
-
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#6b0784">
-    <link rel="shortcut icon" href="favicon.ico">
-    <meta name="msapplication-TileColor" content="#6b0784">
-    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta name="theme-color" content="#381b56" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
 
 
     <!-- favicon end  -->
 
 
+
+<!--    metatags-->
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mwonya: African Entertainment">
+    <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
+    <meta property="og:url" content="https://www.mwonya.com/">
+    <meta property="og:site_name" content="Mwonya Music">
+    <meta property="article:published_time" content="02 Dec 2022">
+    <meta property="article:modified_time" content="02 Dec 2022">
+    <meta property="og:update_time" content="Mwonya Music">
+    <meta property="og:image" content="https://media-exp1.licdn.com/dms/image/C4D22AQFeC9cMwvFOEg/feedshare-shrink_800/0/1667981882335?e=2147483647&v=beta&t=mZ2SeUTqU0qN3nSt7GHg27F8403O6P-THTB_2bcuqS0">
+    <meta property="og:image:secure_url" content="https://media-exp1.licdn.com/dms/image/C4D22AQFeC9cMwvFOEg/feedshare-shrink_800/0/1667981882335?e=2147483647&v=beta&t=mZ2SeUTqU0qN3nSt7GHg27F8403O6P-THTB_2bcuqS0">
+    <meta property="og:image:width" content="250">
+    <meta property="og:image:height" content="150">
+    <meta property="og:image:alt" content="Mwonya logo">
+<!--    metatagsend-->
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
           rel='stylesheet' type='text/css'>
