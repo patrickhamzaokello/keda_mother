@@ -10,99 +10,31 @@ $db = new Database();
 $con = $db->getConnString();
 
 
+$username = 'Guest';
+$userId = null;
+$userrole = null;
+$userRegstatus = "trial";
 
-if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
-    $sessionusername = $_SESSION['userLoggedIn'];
-    $userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
+if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null) {
+    $sessionUsername = $_SESSION['userLoggedIn'];
+} elseif (isset($_COOKIE['userID']) && $_COOKIE['userID'] !== null) {
+    $sessionUsername = $_COOKIE['userID'];
+}
 
-    //TODO: Check if username exists
-    $checkUsernameQuery = mysqli_query($con, "SELECT username FROM users WHERE username = '$sessionusername'");
-    if (mysqli_num_rows($checkUsernameQuery) != 0) {
-
-        if ($userLoggedIn->getcheckuser()) {
-            $username = $userLoggedIn->getUsername();
-            $userId = $userLoggedIn->getUserId();
-            $userrole = $userLoggedIn->getUserrole();
-            $userRegstatus = $userLoggedIn->getUserStatus();
-            echo "<script>userLoggedIn = '$username'; </script>";
-        } else {
-            $username = $sessionusername;
-            $userId = $sessionusername;
-            $userrole = $sessionusername;
-            $userRegstatus = "trial";
-            echo "<script>userLoggedIn = '$sessionusername'; </script>";
-        }
-    } else {
-        $userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
-        if ($userLoggedIn->getcheckuser()) {
-            $username = $userLoggedIn->getUsername();
-            $userId = $userLoggedIn->getUserId();
-            $userrole = $userLoggedIn->getUserrole();
-            $userRegstatus = $userLoggedIn->getUserStatus();
-            echo "<script>userLoggedIn = '$username'; </script>";
-        } else {
-            $username = 'Guest';
-            $username = $username;
-            $userId = $username;
-            $userrole = $username;
-            $userRegstatus = "trial";
-            echo "<script>userLoggedIn = '$sessionusername'; </script>";
-        }
-    }
-} elseif (isset($_COOKIE['userID']) && ($_COOKIE['userID'] != '')) {
-
-    //get cookie value and assign to varible
-    $cookieusername = $_COOKIE['userID'];
-    //TODO: Check if username exists
-    $checkUsernameQuery = mysqli_query($con, "SELECT username FROM users WHERE username = '$cookieusername'");
-
-    if (mysqli_num_rows($checkUsernameQuery) != 0) {
-        //set sessionbased on cookie -- linked to nowPlayingcontainer to work
-        $_SESSION['userLoggedIn'] = $cookieusername;
-
-        $userLoggedIn = new User($con, $cookieusername);
-
-        if ($userLoggedIn->getcheckuser()) {
-            $username = $userLoggedIn->getUsername();
-            $userId = $userLoggedIn->getUserId();
-            $userrole = $userLoggedIn->getUserrole();
-            $userRegstatus = $userLoggedIn->getUserStatus();
-            echo "<script>userLoggedIn = '$username'; </script>";
-        } else {
-            $username = 'Guest';
-            $username = $username;
-            $userId = $username;
-            $userrole = $username;
-            $userRegstatus = "trial";
-            echo "<script>userLoggedIn = '$username'; </script>";
-        }
-    } else {
-    }
-} else {
-
-    $username = 'Guest';
-    $_SESSION['userLoggedIn'] = $username;
-
-    $userLoggedIn = new User($con, $username);
-
+if (isset($sessionUsername)) {
+    $userLoggedIn = new User($con, $sessionUsername);
     if ($userLoggedIn->getcheckuser()) {
         $username = $userLoggedIn->getUsername();
         $userId = $userLoggedIn->getUserId();
         $userrole = $userLoggedIn->getUserrole();
         $userRegstatus = $userLoggedIn->getUserStatus();
-        echo "<script>userLoggedIn = '$username'; </script>";
-    } else {
-        $username = $username;
-        $userId = $username;
-        $userrole = $username;
-        $userRegstatus = "trial";
-        echo "<script>userLoggedIn = '$username'; </script>";
     }
 }
 
+echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; currentuser = '$userId';</script>";
+
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -117,6 +49,7 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
 
         gtag('config', 'G-YNG3P75VXH');
@@ -133,7 +66,7 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <meta name="theme-color" content="#140721" />
+    <meta name="theme-color" content="#140721"/>
 
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#6b0784">
@@ -145,26 +78,19 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
     <!-- favicon end  -->
 
     <script>
-        // if ('serviceWorker' in navigator) {
-        //     window.addEventListener('load', () => {
-        //         navigator.serviceWorker
-        //             .register('sw_cache_mwonyaa_site.js')
-        //             .then(reg => console.log('Service worker: registered'))
-        //             .catch(err => console.log(`Failed to register service worker: ${err}`))
-        //     })
-        // };
 
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw_cache_mwonyaa_site.js').then(function(registration) {
+            navigator.serviceWorker.register('sw_cache_mwonyaa_site.js').then(function (registration) {
                 console.log('ServiceWorker registration successful!');
-            }).catch(function(err) {
+            }).catch(function (err) {
                 console.log('ServiceWorker registration failed: ', err);
             });
         }
     </script>
 
 
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
+          rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
@@ -173,7 +99,8 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
     <link rel="stylesheet" href="staticFiles/css/style.css">
     <!-- <link rel="stylesheet" href="https://d1d1i04hu392ot.cloudfront.net/staticFiles/css/style.css"> -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- <script src="https://d1d1i04hu392ot.cloudfront.net/staticFiles/js/MainScript.js"></script> -->
     <script src="staticFiles/js/MainScript.js"></script>
 
@@ -183,8 +110,9 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
     <!-- <script src="https://unpkg.com/wavesurfer.js"></script> -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js" integrity="sha512-eviLb3jW7+OaVLz5N3B5F0hpluwkLb8wTXHOTy0CyNaZM5IlShxX1nEbODak/C0k9UdsrWjqIBKOFY0ELCCArw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"
+            integrity="sha512-eviLb3jW7+OaVLz5N3B5F0hpluwkLb8wTXHOTy0CyNaZM5IlShxX1nEbODak/C0k9UdsrWjqIBKOFY0ELCCArw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
 </head>
@@ -192,30 +120,29 @@ if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null ) {
 <body>
 
 
+<?php
+
+include("includes/headingContainer.php");
+
+?>
+
+<section class="content">
 
     <?php
 
-    include("includes/headingContainer.php");
+    include("includes/navBarContainer.php");
 
     ?>
 
-    <section class="content">
-
-        <?php
-
-        include("includes/navBarContainer.php");
-
-        ?>
-
-        <div class="content__middle">
-            <div class="loadercentered">
-                <div class="lds-facebook">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+    <div class="content__middle">
+        <div class="loadercentered">
+            <div class="lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
-            <div class="showdialogbox">
-                <!-- alertmessage -->
-            </div>
-            <div class="artist wholecontent is-verified d-none" id="mainContent">
+        </div>
+        <div class="showdialogbox">
+            <!-- alertmessage -->
+        </div>
+        <div class="artist wholecontent is-verified d-none" id="mainContent">

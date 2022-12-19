@@ -11,20 +11,28 @@ include("classes/Playlist.php");
 $db = new Database();
 $con = $db->getConnString();
 
-if (isset($_SESSION['userLoggedIn'])) {
-  $userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
-  $username = $userLoggedIn->getUsername();
-  $userId = $userLoggedIn->getUserId();
+$username = 'Guest';
+$userId = null;
+$userrole = null;
+$userRegstatus = "trial";
 
-  echo "<script>userLoggedIn = '$username';</script>";
-} else {
-  header("Location: register");
+if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null) {
+    $sessionUsername = $_SESSION['userLoggedIn'];
+} elseif (isset($_COOKIE['userID']) && $_COOKIE['userID'] !== null) {
+    $sessionUsername = $_COOKIE['userID'];
+}
+
+if (isset($sessionUsername)) {
+    $userLoggedIn = new User($con, $sessionUsername);
+    if ($userLoggedIn->getcheckuser()) {
+        $username = $userLoggedIn->getUsername();
+        $userId = $userLoggedIn->getUserId();
+        $userrole = $userLoggedIn->getUserrole();
+        $userRegstatus = $userLoggedIn->getUserStatus();
+    }
 }
 
 
-
-
-$username = $userLoggedIn->getUsername();
 
 $playlistQuery = mysqli_query($con, "SELECT * FROM playlists where owner ='$username' ORDER BY dateCreated DESC");
 

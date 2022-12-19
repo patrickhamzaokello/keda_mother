@@ -28,23 +28,6 @@ if ($userRegstatus != "registered") {
 
 $jsonArray = json_encode($resultArray);
 
-
-if (isset($_SESSION['userLoggedIn'])) {
-    $userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
-    $currentuserID = $userLoggedIn->getUserId();
-    $userrole = $userLoggedIn->getUserrole();
-
-    echo "
-    <script>
-    currentuser = '$currentuserID';
-    </script>";
-} else {
-    // header("Location: register");
-    // header("Location:register?location=" . urlencode($_SERVER['REQUEST_URI']));
-
-}
-
-
 ?>
 
 

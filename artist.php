@@ -9,9 +9,6 @@ if (isset($_GET['id'])) {
 include("includes/includedFiles.php");
 
 $artist = new Artist($con, $artistId);
-$userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
-$username = $userLoggedIn->getUsername();
-$userId = $userLoggedIn->getUserId();
 
 
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";

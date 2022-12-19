@@ -9,8 +9,6 @@ $podcastsarray = array();
 $poemsarray = array();
 $djmixesarray = array();
 
-$username = $userLoggedIn->getUsername();
-
 
 // query all playlists whose status is 1  that is public state
 $playlistQuery = mysqli_query($con, "SELECT * FROM playlists where status = 1 AND featuredplaylist ='yes' ORDER BY RAND ()");

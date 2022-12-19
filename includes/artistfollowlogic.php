@@ -13,10 +13,26 @@ if (isset($_GET['id'])) {
 $db = new Database();
 $con = $db->getConnString();
 
+$username = 'Guest';
+$userId = null;
+$userrole = null;
+$userRegstatus = "trial";
 
-$userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
-$username = $userLoggedIn->getUsername();
-$userId = $userLoggedIn->getUserId();
+if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null) {
+    $sessionUsername = $_SESSION['userLoggedIn'];
+} elseif (isset($_COOKIE['userID']) && $_COOKIE['userID'] !== null) {
+    $sessionUsername = $_COOKIE['userID'];
+}
+
+if (isset($sessionUsername)) {
+    $userLoggedIn = new User($con, $sessionUsername);
+    if ($userLoggedIn->getcheckuser()) {
+        $username = $userLoggedIn->getUsername();
+        $userId = $userLoggedIn->getUserId();
+        $userrole = $userLoggedIn->getUserrole();
+        $userRegstatus = $userLoggedIn->getUserStatus();
+    }
+}
 
 
 

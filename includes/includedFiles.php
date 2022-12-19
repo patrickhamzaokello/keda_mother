@@ -17,34 +17,28 @@ if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTE
     $con = $db->getConnString();
 
 
-    if (isset($_SESSION['userLoggedIn'])) {
-        $userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
-        $userrole = $userLoggedIn->getUserrole();
-        $userRegstatus = $userLoggedIn->getUserStatus();
+    $username = 'Guest';
+    $userId = null;
+    $userrole = null;
+    $userRegstatus = "trial";
 
-        if ($userRegstatus === "registered") {
-            echo "
-                <script>
-                isRegistered = '$userRegstatus';
-                
-                </script>";
-        } else {
-        }
-    } else {
-        echo "
-        <div>
-
-            <div class='suggestions' style='text-decoration:none' >
-            Error Occurred. Please Refresh the Page. 
-            
-            <a href='index'>
-            <p style='color:light-gray; text-decoration: none;'>Click to Refresh Page<p></a>
-            </div>
-
-        </div>    
-        ";
-        exit();
+    if (isset($_SESSION['userLoggedIn']) && $_SESSION['userLoggedIn'] !== null) {
+        $sessionUsername = $_SESSION['userLoggedIn'];
+    } elseif (isset($_COOKIE['userID']) && $_COOKIE['userID'] !== null) {
+        $sessionUsername = $_COOKIE['userID'];
     }
+
+    if (isset($sessionUsername)) {
+        $userLoggedIn = new User($con, $sessionUsername);
+        if ($userLoggedIn->getcheckuser()) {
+            $username = $userLoggedIn->getUsername();
+            $userId = $userLoggedIn->getUserId();
+            $userrole = $userLoggedIn->getUserrole();
+            $userRegstatus = $userLoggedIn->getUserStatus();
+        }
+    }
+    echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; currentuser = '$userId';</script>";
+
 } else {
     include("includes/header.php");
     include("includes/footer.php");

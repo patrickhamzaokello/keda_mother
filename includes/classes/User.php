@@ -18,9 +18,15 @@ class User
 
 	public function getEmail()
 	{
-		$query = mysqli_query($this->con, "SELECT email FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['email'];
+        $query = "SELECT email FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $email);
+            mysqli_stmt_fetch($stmt);
+            return $email;
+        }
 	}
 
 	public function getcheckuser(){
@@ -33,49 +39,94 @@ class User
 
 	public function getUsernameemail()
 	{
-		$query = mysqli_query($this->con, "SELECT username FROM users WHERE username='$this->username' OR email ='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['username'];
+		$query = "SELECT username FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $username);
+            mysqli_stmt_fetch($stmt);
+            return $username;
+        }
 	}
 
 
 
 	public function getFirstAndLastName()
 	{
-		$query = mysqli_query($this->con, "SELECT concat(firstName, ' ', lastName) as 'name'  FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['name'];
+
+        $query = "SELECT concat(firstName, ' ', lastName) as 'name' FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $name);
+            mysqli_stmt_fetch($stmt);
+            return $name;
+        }
 	}
 
 	public function getUserId()
 	{
-		$query = mysqli_query($this->con, "SELECT id FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['id'];
+
+        $query = "SELECT id FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $id);
+            mysqli_stmt_fetch($stmt);
+            return $id;
+        }
 	}
 
 	public function getuserCoverimage(){
-		$query = mysqli_query($this->con, "SELECT profilePic FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['profilePic'];
+	    $query = "SELECT profilePic FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $profilePic);
+            mysqli_stmt_fetch($stmt);
+            return $profilePic;
+        }
+
 	}
 
 	public function getPoints()
 	{
-		$query = mysqli_query($this->con, "SELECT points FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['points'];
+        $query = "SELECT points FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $points);
+            mysqli_stmt_fetch($stmt);
+            return $points;
+        }
 	}
 
 	public function getUserrole(){
-		$query = mysqli_query($this->con, "SELECT mwRole FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['mwRole'];
+		$query = "SELECT mwRole FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $mwRole);
+            mysqli_stmt_fetch($stmt);
+            return $mwRole;
+        }
 	}
 
 	public function getUserStatus(){
-		$query = mysqli_query($this->con, "SELECT status FROM users WHERE username='$this->username'");
-		$row = mysqli_fetch_array($query);
-		return $row['status'];
+	    $query = "SELECT status FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($this->con);
+        if (mysqli_stmt_prepare($stmt, $query)) {
+            mysqli_stmt_bind_param($stmt, "s", $this->username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_bind_result($stmt, $status);
+            mysqli_stmt_fetch($stmt);
+            return $status;
+        }
 	}
 }
