@@ -6,23 +6,22 @@ class LikedSong
     private $con;
     private $id;
     private $songId;
-    private $userID;
-    private $songorder;
+    private $user_ID_type;
 
 
 
     public function __construct($con, $userID)
     {
         $this->con = $con;
-        $this->userID = $userID;
+        $this->user_ID_type = $userID;
 
-        $query = mysqli_query($this->con, "SELECT * FROM likedsongs WHERE userID='$this->userID' ORDER BY songorder ASC");
+        $query = mysqli_query($this->con, "SELECT * FROM likedsongs WHERE userID='$this->user_ID_type' ORDER BY `likedsongs`.`dateAdded` DESC");
 
         if (mysqli_num_rows($query) == 0) {
            
             $this->id = null;
             $this->songId = null;
-            $this->userID = null;
+            $this->user_ID_type = null;
             $this->songorder = null;
 
         }
@@ -31,14 +30,13 @@ class LikedSong
 
         $this->id = $likedsong['id'];
         $this->songId = $likedsong['songId'];
-        $this->userID = $likedsong['userID'];
-        $this->songorder = $likedsong['songorder'];
+        $this->user_ID_type = $likedsong['userID'];
     }
 
 
     public function getOwner()
     {
-        return $this->userID;
+        return $this->user_ID_type;
     }
 
     public function getSongorder()
@@ -51,13 +49,13 @@ class LikedSong
 
     public function getNumberOfSongs()
     {
-        $query = mysqli_query($this->con, "SELECT DISTINCT songId  FROM likedsongs WHERE userID='$this->userID'");
+        $query = mysqli_query($this->con, "SELECT DISTINCT songId  FROM likedsongs WHERE userID='$this->user_ID_type'");
         return mysqli_num_rows($query);
     }
 
     public function getSongIds()
     {
-        $query = mysqli_query($this->con, "SELECT DISTINCT songId FROM likedsongs WHERE userID='$this->userID' ORDER BY songorder DESC");
+        $query = mysqli_query($this->con, "SELECT DISTINCT songId FROM likedsongs WHERE userID='$this->user_ID_type' ORDER BY `likedsongs`.`dateAdded` DESC");
 
         $array = array();
 
@@ -68,21 +66,11 @@ class LikedSong
         return $array;
     }
 
-    public function getArtistIds()
-    {
-        $query = mysqli_query($this->con, "SELECT DISTINCT artistId FROM likedsongs WHERE userID='$this->userID' ORDER BY artistId DESC");
-        $array = array();
 
-        while ($row = mysqli_fetch_array($query)) {
-            array_push($array, $row['artistId']);
-        }
-
-        return $array;
-    }
 
     public function getArtistYouFollow()
     {
-        $query = mysqli_query($this->con, "SELECT artistid FROM artistfollowing WHERE userid='$this->userID' ORDER BY datefollowed DESC");
+        $query = mysqli_query($this->con, "SELECT DISTINCT artistid FROM artistfollowing WHERE userid='$this->user_ID_type' ORDER BY datefollowed DESC");
         $array = array();
 
         while ($row = mysqli_fetch_array($query)) {
@@ -95,37 +83,16 @@ class LikedSong
     public function getRecentAlbumId()
     {
 
-        $query = mysqli_query($this->con, "SELECT artistid FROM artistfollowing WHERE userid='$this->userID' ORDER BY datefollowed DESC");
-        $albumQuery = mysqli_query($this->con, "SELECT id FROM albums WHERE tag = \"music\" ORDER BY datecreated DESC Limit 20 ");
-
-        $artistIdarray = array();
-        $albumQueryarray = array();
-
-        while ($row = mysqli_fetch_array($query)) {
-            array_push($artistIdarray, $row['artistid']);
-        }
-
-        while ($row = mysqli_fetch_array($albumQuery)) {
-            array_push($albumQueryarray, $row['id']);
-        }
-
+        $query = "SELECT a.id FROM artistfollowing af INNER JOIN albums a ON af.artistid = a.artist WHERE af.userid = ? AND a.tag = 'music' AND datecreated > DATE_SUB(NOW(), INTERVAL 14 DAY) ORDER BY a.datecreated DESC, a.artist LIMIT 20;";
+        $stmt = mysqli_prepare($this->con, $query);
+        mysqli_stmt_bind_param($stmt, "s", $this->user_ID_type);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $id);
         $albumidarray = array();
-
-        foreach ($albumQueryarray as $id) {
-
-            foreach ($artistIdarray as $artist) {
-
-
-                $query = mysqli_query($this->con, "SELECT id FROM albums WHERE artist='$artist' AND id='$id' ORDER BY datecreated Limit 1");
-
-                while ($row = mysqli_fetch_array($query)) {
-                    echo $row['id'];
-
-                    array_push($albumidarray, $row['id']);
-                }
-            }
+        while (mysqli_stmt_fetch($stmt)) {
+            $albumidarray[] = $id;
         }
-
-        return $albumidarray;
+        mysqli_stmt_close($stmt);
+        return array_unique($albumidarray);
     }
 }

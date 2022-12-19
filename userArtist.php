@@ -9,8 +9,7 @@
     <?php
     include("includes/classes/NewRelease.php");
 
-    $likedsong = new LikedSong($con, $userLoggedIn->getUserId());
-    $owner = new User($con, $likedsong->getOwner());
+    $likedsong = new LikedSong($con, $userId);
 
     ?>
 
@@ -27,33 +26,33 @@
                     </h2>
                     <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
                 </div>
-                <?php $artistIdArray = $likedsong->getArtistYouFollow(); ?>
 
-                <?php if ($artistIdArray) : ?>
+                <?php $album_id_array = $likedsong->getRecentAlbumId(); ?>
+
+                <?php if ($album_id_array) : ?>
 
                     <ul class="hs">
 
                         <?php
-                        foreach ($artistIdArray as $artistid) :
+                        foreach ($album_id_array as $album_id_single) :
 
                         ?>
 
                             <?php
-                            $artist = new Artist($con, $artistid);
-                            $Newalbum = new NewRelease($con, $artistid);
+                            $album_class = new Album($con, $album_id_single);
                             ?>
 
 
                             <li class="hs__item" role='link' tabindex='0'>
-                                <div class="hs__item__image__wrapper" onclick="openPage('album?id=<?= $Newalbum->getId() ?>')">
-                                    <img class="hs__item__image" src="<?= $Newalbum->getArtworkPath() ?>" alt="" />
+                                <div class="hs__item__image__wrapper" onclick="openPage('album?id=<?= $album_class->getId() ?>')">
+                                    <img class="hs__item__image" src="<?= $album_class->getArtworkPath() ?>" alt="" />
                                 </div>
                                 <div class="hs__item__description">
 
-                                    <span class="hs__item__title" onclick="openPage('album?id=<?= $Newalbum->getId() ?>')"><?= $Newalbum->getTitle() ?></span>
-                                    <span class="hs__item__subtitle" onclick="openPage('artist?id=<?= $Newalbum->getArtistId() ?>')"><?= $artist->getName() ?></span>
+                                    <span class="hs__item__title" onclick="openPage('album?id=<?= $album_class->getId() ?>')"><?= $album_class->getTitle() ?></span>
+                                    <span class="hs__item__subtitle" onclick="openPage('artist?id=<?= $album_class->getArtistId() ?>')"><?= $album_class->getArtist()->getName() ?></span>
 
-                                    <span class="hs__item__subtitle"><?= $Newalbum->getDatecreated() ?></span>
+                                    <span class="hs__item__subtitle"><?= $album_class->getDatecreated() ?></span>
 
 
                                 </div>
@@ -84,79 +83,17 @@
         </div>
 
 
-        <div class="overview__albums__head">
-
-            <span class="section-title">Your Liked Artists</span>
-
-        </div>
-
-
-
-
-        <div class="album">
-
-
-
-
-            <?php
-
-            $artistIdArray = $likedsong->getArtistIds(); ?>
-
-            <?php if ($artistIdArray) : ?>
-
-                <div class="usercollection">
-
-
-                    <?php
-                    $i = 1;
-
-                    foreach ($artistIdArray as $artistid) {
-
-                        $artist = new Artist($con, $artistid);
-
-                        echo "
-            <div class='friend'>
-
-                <div class='userdiv' onclick='openPage(\"artist?id=" . $artist->getId() . "\")'>
-                <img src='" . $artist->getProfilePath() . "' alt='' />
-
-            </div>
-
-                <p> " . $artist->getName() . " </p>
-
-            </div>
-
-            ";
-                        $i = $i + 1;
-                    }
-
-
-                    ?>
-                </div>
-
-
-            <?php else :  ?>
-
-
-                <div class='notificationempty'>
-                    <h5>Your Liked Artists Appear Here!</h5>
-                </div>
-
-            <?php endif ?>
 
 
 
 
 
 
-
-
-        </div>
 
 
         <div class="overview__albums__head">
 
-            <span class="section-title">Artist You Follow</span>
+            <span class="section-title">Artists You Follow</span>
 
         </div>
 
