@@ -1,0 +1,11 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.pkasemer.mwonyaa",
+        "sha256_cert_fingerprints":
+          ["5C:97:26:1E:A3:EE:C4:7D:9B:3C:91:60:B3:57:9F:C2:72:F5:62:A1:59:98:5A:5A:6C:39:79:E7:22:CB:99:5F"]
+      }
+    }
+  ]
