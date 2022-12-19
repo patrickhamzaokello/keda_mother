@@ -34,12 +34,12 @@ include("includes/queries/browsequery.php");
 
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
-            <?php if ($featuredartists) : ?>
 
                 <ul class="hs">
+                    <?php if ($dataArrays['featuredartists']) : ?>
 
                     <?php
-                    foreach ($featuredartists as $row) :
+                    foreach ($dataArrays['featuredartists'] as $row) :
 
                     ?>
 
@@ -49,10 +49,10 @@ include("includes/queries/browsequery.php");
 
 
                         <li class="hs__item" role='link' tabindex='0' onclick="openPage('artist?id=<?= $row['id'] ?>')">
-                            <div class="hs__item__image__wrapper">
+                            <div class="hs__item__image__wrapper artistprofile">
                                 <img class="hs__item__image" src="<?= $artist->getProfilePath() ?>" alt="" />
                             </div>
-                            <div class="hs__item__description"><span class="hs__item__title"><?= $artist->getName() ?></span><span class="hs__item__subtitle"><?= $artist->getGenrename() ?></span></div>
+                            <div class="hs__item__description artistprofiledesc"><span class="hs__item__title"><?= $artist->getName() ?></span><span class="hs__item__subtitle"><?= $artist->getGenrename() ?></span></div>
                         </li>
 
 
@@ -61,7 +61,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -69,6 +68,8 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Getting Featured Music Artists Curated for You
             <?php endif ?>
+                </ul>
+
 
 
         </div>
@@ -87,12 +88,12 @@ include("includes/queries/browsequery.php");
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
-            <?php if ($publicplaylistsarray) : ?>
 
                 <ul class="hs">
+                    <?php if ($dataArrays['publicplaylistsarray']) : ?>
 
                     <?php
-                    foreach ($publicplaylistsarray as $row) :
+                    foreach ($dataArrays['publicplaylistsarray'] as $row) :
 
                     ?>
 
@@ -111,7 +112,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -119,6 +119,7 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Playlist Curated for You
             <?php endif ?>
+                </ul>
 
 
         </div>
@@ -136,12 +137,12 @@ include("includes/queries/browsequery.php");
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
-            <?php if ($albumsarray) : ?>
 
                 <ul class="hs">
+                    <?php if ($dataArrays['albumsarray']) : ?>
 
                     <?php
-                    foreach ($albumsarray as $row) :
+                    foreach ($dataArrays['albumsarray'] as $row) :
 
                     ?>
 
@@ -164,7 +165,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -172,6 +172,7 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Getting Music Albums Curated for You
             <?php endif ?>
+                </ul>
 
 
         </div>
@@ -190,13 +191,13 @@ include("includes/queries/browsequery.php");
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
+            <ul class="hs">
 
-            <?php if ($podcastsarray) : ?>
+            <?php if ($dataArrays['podcastsarray']) : ?>
 
-                <ul class="hs">
 
                     <?php
-                    foreach ($podcastsarray as $row) :
+                    foreach ($dataArrays['podcastsarray'] as $row) :
 
                     ?>
 
@@ -219,7 +220,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -227,6 +227,7 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Getting Podcasts Curated for You
             <?php endif ?>
+            </ul>
 
         </div>
     </div>
@@ -240,12 +241,14 @@ include("includes/queries/browsequery.php");
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
-            <?php if ($djmixesarray) : ?>
 
-                <ul class="hs">
+            <ul class="hs">
+
+            <?php if ($dataArrays['djmixesarray']) : ?>
+
 
                     <?php
-                    foreach ($djmixesarray as $row) :
+                    foreach ($dataArrays['djmixesarray'] as $row) :
 
                     ?>
 
@@ -267,7 +270,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -275,6 +277,8 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Getting Dj Mixes Curated for You
             <?php endif ?>
+            </ul>
+
         </div>
     </div>
     <div class="sectioncontainer">
@@ -286,12 +290,14 @@ include("includes/queries/browsequery.php");
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
-            <?php if ($poemsarray) : ?>
 
-                <ul class="hs">
+            <ul class="hs">
+
+            <?php if ($dataArrays['poemsarray']) : ?>
+
 
                     <?php
-                    foreach ($poemsarray as $row) :
+                    foreach ($dataArrays['poemsarray'] as $row) :
 
                     ?>
 
@@ -313,7 +319,6 @@ include("includes/queries/browsequery.php");
 
 
 
-                </ul>
 
 
 
@@ -321,73 +326,69 @@ include("includes/queries/browsequery.php");
             <?php else :  ?>
                 Working on Getting Poems Curated for You
             <?php endif ?>
+
+            </ul>
+
         </div>
     </div>
 
     <script>
         $(function() {
-            var elmnt = document.getElementById("mainContent");
-            elmnt.scrollTop = 0
-            var instance = $(".hs__wrapper");
+            const mainContent = document.getElementById("mainContent");
+            mainContent.scrollTop = 0;
+            const instances = $(".hs__wrapper");
 
-            $.each(instance, function(key, value) {
+            instances.each((_, instance) => {
+                const arrows = $(instance).find(".arrow");
+                const prevArrow = arrows.filter(".arrow-prev");
+                const nextArrow = arrows.filter(".arrow-next");
+                const box = $(instance).find(".hs");
+                let x = 0;
+                let mx = 0;
+                const maxScrollWidth = box[0].scrollWidth - (box[0].clientWidth / 2) - (box.width() / 2);
 
-                var arrows = $(instance[key]).find(".arrow"),
-                    prevArrow = arrows.filter('.arrow-prev'),
-                    nextArrow = arrows.filter('.arrow-next'),
-                    box = $(instance[key]).find(".hs"),
-                    x = 0,
-                    mx = 0,
-                    maxScrollWidth = box[0].scrollWidth - (box[0].clientWidth / 2) - (box.width() / 2);
-
-                $(arrows).on('click', function() {
-
+                arrows.on("click", function() {
                     if ($(this).hasClass("arrow-next")) {
-                        x = ((box.width() / 2)) + box.scrollLeft() - 10;
+                        x = box.width() / 2 + box.scrollLeft() - 10;
                         box.animate({
                             scrollLeft: x,
-                        })
+                        });
                     } else {
-                        x = ((box.width() / 2)) - box.scrollLeft() - 10;
+                        x = box.width() / 2 - box.scrollLeft() - 10;
                         box.animate({
                             scrollLeft: -x,
-                        })
+                        });
                     }
-
                 });
 
-                $(box).on({
-                    mousemove: function(e) {
-                        var mx2 = e.pageX - this.offsetLeft;
+                box.on({
+                    mousemove(e) {
+                        const mx2 = e.pageX - this.offsetLeft;
                         if (mx) this.scrollLeft = this.sx + mx - mx2;
                     },
-                    mousedown: function(e) {
+                    mousedown(e) {
                         this.sx = this.scrollLeft;
                         mx = e.pageX - this.offsetLeft;
                     },
-                    scroll: function() {
+                    scroll() {
                         toggleArrows();
-                    }
+                    },
                 });
 
-                $(document).on("mouseup", function() {
+                $(document).on("mouseup", () => {
                     mx = 0;
                 });
 
                 function toggleArrows() {
                     if (box.scrollLeft() > maxScrollWidth - 10) {
-                        // disable next button when right end has reached 
-                        nextArrow.addClass('disabled');
+                        nextArrow.addClass("disabled");
                     } else if (box.scrollLeft() < 10) {
-                        // disable prev button when left end has reached 
-                        prevArrow.addClass('disabled')
+                        prevArrow.addClass("disabled");
                     } else {
-                        // both are enabled
-                        nextArrow.removeClass('disabled');
-                        prevArrow.removeClass('disabled');
+                        nextArrow.removeClass("disabled");
+                        prevArrow.removeClass("disabled");
                     }
                 }
-
             });
         });
     </script>

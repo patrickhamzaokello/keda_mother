@@ -77,16 +77,6 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
 
     <!-- favicon end  -->
 
-    <script>
-
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw_cache_mwonyaa_site.js').then(function (registration) {
-                console.log('ServiceWorker registration successful!');
-            }).catch(function (err) {
-                console.log('ServiceWorker registration failed: ', err);
-            });
-        }
-    </script>
 
 
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900'
@@ -99,9 +89,10 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
     <link rel="stylesheet" href="staticFiles/css/style.css">
     <!-- <link rel="stylesheet" href="https://d1d1i04hu392ot.cloudfront.net/staticFiles/css/style.css"> -->
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- <script src="https://d1d1i04hu392ot.cloudfront.net/staticFiles/js/MainScript.js"></script> -->
+    <script
+            src="https://code.jquery.com/jquery-3.6.2.min.js"
+            integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA="
+            crossorigin="anonymous"></script>
     <script src="staticFiles/js/MainScript.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
@@ -113,6 +104,28 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.11/jquery.lazy.min.js"
             integrity="sha512-eviLb3jW7+OaVLz5N3B5F0hpluwkLb8wTXHOTy0CyNaZM5IlShxX1nEbODak/C0k9UdsrWjqIBKOFY0ELCCArw=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function() {
+                    console.log('Service worker registered!');
+                })
+                .catch(function(error) {
+                    console.error('Error registering service worker:', error);
+                });
+        } else {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function() {
+                    console.log('Service worker registered!');
+                })
+                .catch(function(error) {
+                    console.error('Error registering service worker:', error);
+                });
+        }
+    </script>
+
 
 
 </head>

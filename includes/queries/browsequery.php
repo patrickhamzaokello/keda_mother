@@ -1,67 +1,36 @@
 <?php
 
+$dataArrays = [
+    'publicplaylistsarray' => [],
+    'curatedplaylist' => [],
+    'featuredartists' => [],
+    'albumsarray' => [],
+    'podcastsarray' => [],
+    'poemsarray' => [],
+    'djmixesarray' => []
+];
 
-$publicplaylistsarray = array();
-$curatedplaylist = array();
-$featuredartists = array();
-$albumsarray = array();
-$podcastsarray = array();
-$poemsarray = array();
-$djmixesarray = array();
+$queries = [
+    'publicplaylistsarray' => "SELECT * FROM playlists WHERE status = 1 AND featuredplaylist ='yes' ORDER BY RAND() LIMIT 20",
+    'curatedplaylist' => "SELECT * FROM curatedplaylist WHERE expirystate = 0 LIMIT 20",
+    'featuredartists' => "SELECT * FROM artists WHERE tag = \"music\" AND featured = 1 ORDER BY RAND() LIMIT 20",
+    'albumsarray' => "SELECT * FROM albums WHERE tag = \"music\" AND featured = 1 ORDER BY RAND() LIMIT 20",
+    'podcastsarray' => "SELECT * FROM albums WHERE tag = \"podcast\" GROUP BY artist  ORDER BY datecreated DESC LIMIT 20",
+    'poemsarray' => "SELECT * FROM albums WHERE tag = \"poem\" GROUP BY artist  ORDER BY datecreated DESC LIMIT 20",
+    'djmixesarray' => "SELECT * FROM albums WHERE tag = \"dj\" GROUP BY artist  ORDER BY datecreated DESC LIMIT 20"
+];
 
+$stmt = mysqli_stmt_init($con);
 
-// query all playlists whose status is 1  that is public state
-$playlistQuery = mysqli_query($con, "SELECT * FROM playlists where status = 1 AND featuredplaylist ='yes' ORDER BY RAND ()");
-//query all curated playlist whose expirystate is false (0) - not expired yet
-$curatedplaylistQuery = mysqli_query($con, "SELECT * FROM curatedplaylist where expirystate = 0");
-$musicartistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag= \"music\" AND featured = 1 ORDER BY RAND () LIMIT 20");
-$albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"music\" AND featured = 1 ORDER BY RAND () LIMIT 20");
-$podcastQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"podcast\" ORDER BY datecreated DESC LIMIT 20");
-$poemQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"poem\" ORDER BY datecreated DESC LIMIT 20");
-$djQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"dj\" ORDER BY datecreated DESC LIMIT 20");
+foreach ($queries as $arrayName => $query) {
+    if (mysqli_stmt_prepare($stmt, $query)) {
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-
-//pushing to publicplaylist array
-while ($row = mysqli_fetch_array($playlistQuery)) {
-
-    array_push($publicplaylistsarray, $row);
+        while ($row = mysqli_fetch_array($result)) {
+            array_push($dataArrays[$arrayName], $row);
+        }
+    }
 }
 
-//pushing to curatedplaylist array
-while ($row = mysqli_fetch_array($curatedplaylistQuery)) {
-
-    array_push($curatedplaylist, $row);
-}
-
-//pushing to featuredartists array
-while ($row = mysqli_fetch_array($musicartistQuery)) {
-
-    array_push($featuredartists, $row);
-}
-
-
-//pushing to the album array
-while ($row = mysqli_fetch_array($albumQuery)) {
-
-    array_push($albumsarray, $row);
-}
-
-//pushing to the podcast array
-while ($row = mysqli_fetch_array($podcastQuery)) {
-
-    array_push($podcastsarray, $row);
-}
-
-
-//pushing to the poem array
-while ($row = mysqli_fetch_array($poemQuery)) {
-
-    array_push($poemsarray, $row);
-}
-
-
-//pushing to the djmix array
-while ($row = mysqli_fetch_array($djQuery)) {
-
-    array_push($djmixesarray, $row);
-}
+mysqli_stmt_close($stmt);

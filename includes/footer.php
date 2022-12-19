@@ -68,9 +68,8 @@ require "includes/nowPlayingContainer.php";
   // work in progress - needs some refactoring and will drop JQuery i promise 
 
   var slideIndex = 0;
-  var adslidecontainer = document.getElementById("addisplay");
 
-  showadSlides();
+  // showadSlides();
 
   function showadSlides() {
     var i;
@@ -82,7 +81,8 @@ require "includes/nowPlayingContainer.php";
     slideIndex++;
     if (slideIndex > slides.length) {
       slideIndex = 1;
-      adslidecontainer.style.display = "none";
+        var adslidecontainer = document.getElementById("addisplay");
+        adslidecontainer.style.display = "none";
     }
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showadSlides, 15000); // Change image every 2 seconds

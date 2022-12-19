@@ -958,6 +958,15 @@ body a:hover {
 
 }
 
+
+.hs__item__image__wrapper.artistprofile {
+  border-radius: 50%;
+}
+
+.hs__item__description.artistprofiledesc {
+  text-align: center;
+}
+
 .hs__item__image {
   pointer-events: none;
   position: absolute;

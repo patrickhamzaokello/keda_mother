@@ -3,7 +3,7 @@ include("includes/includedFiles.php");
 
 $podcastsarray = array();
 
-$podcastQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"podcast\" ORDER BY datecreated DESC LIMIT 20");
+$podcastQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"podcast\" GROUP BY artist ORDER BY datecreated DESC LIMIT 20");
 
 //pushing to the podcast array
 while ($row = mysqli_fetch_array($podcastQuery)) {
@@ -14,7 +14,7 @@ while ($row = mysqli_fetch_array($podcastQuery)) {
 
 $djarray = array();
 
-$djQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"dj\" ORDER BY RAND() LIMIT 20");
+$djQuery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"dj\" GROUP BY artist  ORDER BY RAND() LIMIT 20");
 
 //pushing to the podcast array
 while ($row = mysqli_fetch_array($djQuery)) {
@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_array($djQuery)) {
 
 $poemarray = array();
 
-$poemquery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"poem\" ORDER BY RAND() LIMIT 20");
+$poemquery = mysqli_query($con, "SELECT * FROM albums WHERE tag = \"poem\" GROUP BY artist  ORDER BY RAND() LIMIT 20");
 
 //pushing to the podcast array
 while ($row = mysqli_fetch_array($poemquery)) {
@@ -119,7 +119,7 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
             <?php
 
-            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='music' AND status = 1 ORDER BY `artists`.`overalplays` DESC");
+            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='music' AND status = 1 ORDER BY `artists`.`overalplays` DESC LIMIT 20");
 
             while ($row = mysqli_fetch_array($artistQuery)) {
 
@@ -162,7 +162,7 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
             <?php
 
-            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='podcast' AND status = 1 ORDER BY `artists`.`overalplays` DESC ");
+            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='podcast' AND status = 1 ORDER BY `artists`.`overalplays` DESC LIMIT 20");
 
 
             if (mysqli_num_rows($artistQuery) == 0) {
@@ -209,7 +209,7 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
             <?php
 
-            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='dj' AND status = 1 ORDER BY `artists`.`overalplays` DESC ");
+            $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='dj' AND status = 1 ORDER BY `artists`.`overalplays` DESC LIMIT 20");
 
 
             if (mysqli_num_rows($artistQuery) == 0) {
@@ -252,10 +252,10 @@ while ($row = mysqli_fetch_array($poemquery)) {
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
+            <ul class="hs">
 
             <?php if ($podcastsarray) : ?>
 
-                <ul class="hs">
 
                     <?php
                     foreach ($podcastsarray as $row) :
@@ -281,7 +281,6 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
 
 
-                </ul>
 
 
 
@@ -289,6 +288,7 @@ while ($row = mysqli_fetch_array($poemquery)) {
             <?php else :  ?>
                 Working on Getting Podcasts Curated for You
             <?php endif ?>
+            </ul>
 
         </div>
     </div>
@@ -304,10 +304,10 @@ while ($row = mysqli_fetch_array($poemquery)) {
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
+            <ul class="hs">
 
             <?php if ($djarray) : ?>
 
-                <ul class="hs">
 
                     <?php
                     foreach ($djarray as $row) :
@@ -333,7 +333,6 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
 
 
-                </ul>
 
 
 
@@ -341,13 +340,14 @@ while ($row = mysqli_fetch_array($poemquery)) {
             <?php else :  ?>
                 Working on Getting Dj Mixes Curated for You
             <?php endif ?>
+            </ul>
 
         </div>
     </div>
 
     <?php
 
-    $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='poem' AND status = 1 ORDER BY `artists`.`overalplays` DESC ");
+    $artistQuery = mysqli_query($con, "SELECT * FROM artists WHERE tag='poem' AND status = 1 ORDER BY `artists`.`overalplays` DESC LIMIT 20");
 
 
     if (mysqli_num_rows($artistQuery) == 0) {
@@ -423,10 +423,10 @@ while ($row = mysqli_fetch_array($poemquery)) {
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
+            <ul class="hs">
 
             <?php if ($poemarray) : ?>
 
-                <ul class="hs">
 
                     <?php
                     foreach ($poemarray as $row) :
@@ -452,7 +452,6 @@ while ($row = mysqli_fetch_array($poemquery)) {
 
 
 
-                </ul>
 
 
 
@@ -460,6 +459,7 @@ while ($row = mysqli_fetch_array($poemquery)) {
             <?php else :  ?>
                 Working on Getting Poems Curated for You
             <?php endif ?>
+            </ul>
 
         </div>
     </div>
