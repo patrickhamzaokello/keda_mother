@@ -135,7 +135,7 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
     <script>
 
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('/sw_cache_mwonyaa_site.js')
                 .then(function() {
                     console.log('Service worker registered!');
                 })
@@ -143,7 +143,7 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
                     console.error('Error registering service worker:', error);
                 });
         } else {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('/sw_cache_mwonyaa_site.js')
                 .then(function() {
                     console.log('Service worker registered!');
                 })
