@@ -48,7 +48,7 @@ function menuhandler() {
         <input type="text" name="searchinputfield" class="searchInput" value="<?php echo $term ?>" placeholder="Search"
             onfocus="this.value = this.value" />
 
-        <span class="spinner"> <img src="assets/images/icons/spinner.gif" alt=""></span>
+        <span class="spinner"> <img src="https://artist.mwonyaa.com/assets/images/icons/spinner.gif" alt=""></span>
         <div id="menu-bar">
             <div id="navmenu" onclick="menuhandler()">
                 <div id="bar1" class="bar"></div>
@@ -131,7 +131,7 @@ function menuhandler() {
 
             <span class="user__info__img">
 
-                <img src="assets/images/profile-pics/head_emerald.jpg" alt="Profile Picture" class="img-responsive" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/head_emerald.jpg" alt="Profile Picture" class="img-responsive" />
 
             </span>
 

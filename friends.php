@@ -60,7 +60,7 @@
 <div class="dismissablecontent">
 
     <div class="previewimagecontainer">
-        <img src="assets/images/livethumbnails/friendslive.png" alt="images">
+        <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/friendslive.png" alt="images">
     </div>
 
     <div class="dismissablecontentdesc">

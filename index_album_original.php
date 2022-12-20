@@ -41,14 +41,14 @@ include("includes/queries/indexpagequery.php");
     <title>Mwonyaa Home</title>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/site.webmanifest">
-    <link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://artist.mwonyaa.com/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://artist.mwonyaa.com/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://artist.mwonyaa.com/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="https://artist.mwonyaa.com/assets/images/site.webmanifest">
+    <link rel="mask-icon" href="https://artist.mwonyaa.com/assets/images/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="https://artist.mwonyaa.com/assets/images/favicon.ico">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="assets/images/browserconfig.xml">
+    <meta name="msapplication-config" content="https://artist.mwonyaa.com/assets/images/browserconfig.xml">
 
     <!-- favicon end  -->
 

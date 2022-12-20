@@ -76,7 +76,7 @@ class Account
     {
 
         $encryptedpw = md5($pw); //encrypt password in md5
-        $profilePic = "assets/images/profile-pics/user.png";
+        $profilePic = "https://artist.mwonyaa.com/assets/images/profile-pics/user.png";
         $firstthreeletters = substr($un, 0,3);
         $id = "mw".uniqid().$firstthreeletters;
         $date = date("Y-m-d");

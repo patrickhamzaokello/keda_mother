@@ -33,7 +33,7 @@ include("includes/includedFiles.php"); ?>
 
       <div class="entityInfo">
         <div class="leftSection">
-          <img src="assets/images/bg.jpg">
+          <img src="https://artist.mwonyaa.com/assets/images/bg.jpg">
         </div>
 
         <div class="rightSection">
@@ -177,7 +177,7 @@ include("includes/includedFiles.php"); ?>
     <div class="dismissablecontent">
 
       <div class="previewimagecontainer">
-        <img src="assets/images/livethumbnails/premium.svg" alt="images">
+        <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/premium.svg" alt="images">
       </div>
 
       <div class="dismissablecontentdesc">

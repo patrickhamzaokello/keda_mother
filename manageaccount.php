@@ -13,7 +13,7 @@ $("#mainContent").show();
         <div class="userInfo">
             <h3>ACCOUNT INFO</h3>
 
-            <img src="assets/images/profile-pics/me.jpg" alt="">
+            <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="">
 
             <p class="userlable">USER NAME </P>
             <P class="uservalue"><?php echo $userLoggedIn->getUsername(); ?></P>
@@ -51,7 +51,7 @@ $("#mainContent").show();
     <div class="dismissablecontent">
 
         <div class="previewimagecontainer">
-            <img src="assets/images/livethumbnails/premium.svg" alt="images">
+            <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/premium.svg" alt="images">
         </div>
 
         <div class="dismissablecontentdesc">

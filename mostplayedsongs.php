@@ -22,7 +22,7 @@ include("includes/includedFiles.php"); ?>
         <?php if ($recentSongIds) : ?>
             <div class="entityInfo">
                 <div class="leftSection">
-                    <img src="assets/images/createdplaylist/mostplayed.png">
+                    <img src="https://artist.mwonyaa.com/assets/images/createdplaylist/mostplayed.png">
                 </div>
 
                 <div class="rightSection">
@@ -201,7 +201,7 @@ include("includes/includedFiles.php"); ?>
 <div class="dismissablecontent">
 
     <div class="previewimagecontainer">
-        <img src="assets/images/livethumbnails/premium.svg" alt="images">
+        <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/premium.svg" alt="images">
     </div>
 
     <div class="dismissablecontentdesc">

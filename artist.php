@@ -148,15 +148,15 @@ $twitterusername = "@MwonyaaStream"
         <div class="artist__navigation__friends">
 
             <a href="#">
-                <img src="assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
             </a>
 
             <a href="#">
-                <img src="assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
             </a>
 
             <a href="#">
-                <img src="assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
             </a>
 
         </div>

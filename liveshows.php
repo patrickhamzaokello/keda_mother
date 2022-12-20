@@ -18,7 +18,7 @@ include("includes/includedFiles.php");
     <div class="dismissablecontent">
 
       <div class="previewimagecontainer">
-        <img src="assets/images/livethumbnails/deedandshaylive.png" alt="images">
+        <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/deedandshaylive.png" alt="images">
       </div>
 
       <div class="dismissablecontentdesc">
@@ -42,9 +42,9 @@ include("includes/includedFiles.php");
 
     </div>
     <div class="recommendedVideos__videos">
-      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/mornignshow.png" alt="">
+      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/mornignshow.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>Mwonyaa Stream One on One Show</h4>
             <p>Pkasemer</p>
@@ -55,9 +55,9 @@ include("includes/includedFiles.php");
           </svg>
         </div>
       </div>
-      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/hitmakersshow.png" alt="">
+      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/hitmakersshow.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://i.pinimg.com/originals/6e/47/d4/6e47d4c46d49f0a19e42e4bd7c0ff060.jpg" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://i.pinimg.com/originals/6e/47/d4/6e47d4c46d49f0a19e42e4bd7c0ff060.jpg" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>Hit Maker's Show on Mwonyaa Stream</h4>
             <p>Pkasemer</p>
@@ -68,9 +68,9 @@ include("includes/includedFiles.php");
           </svg>
         </div>
       </div>
-      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/newfacesonmwonyaa.png" alt="">
+      <div class="videoCard" onclick="showComingsoonDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/newfacesonmwonyaa.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>New Faces and Game changers</h4>
             <p>Mwonyaa</p>
@@ -98,7 +98,7 @@ include("includes/includedFiles.php");
     <div class="dismissablecontent">
 
       <div class="previewimagecontainer">
-        <img src="assets/images/livethumbnails/deedandshaylive.png" alt="images">
+        <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/deedandshaylive.png" alt="images">
       </div>
 
       <div class="dismissablecontentdesc">
@@ -120,9 +120,9 @@ include("includes/includedFiles.php");
 
 
     <div class="recommendedVideos__videos">
-      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/mornignshow.png" alt="">
+      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/mornignshow.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>Mwonyaa Stream One on One Show</h4>
             <p>Pkasemer</p>
@@ -133,9 +133,9 @@ include("includes/includedFiles.php");
           </svg>
         </div>
       </div>
-      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/hitmakersshow.png" alt="">
+      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/hitmakersshow.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://i.pinimg.com/originals/6e/47/d4/6e47d4c46d49f0a19e42e4bd7c0ff060.jpg" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://i.pinimg.com/originals/6e/47/d4/6e47d4c46d49f0a19e42e4bd7c0ff060.jpg" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>Hit Maker's Show on Mwonyaa Stream</h4>
             <p>Pkasemer</p>
@@ -146,9 +146,9 @@ include("includes/includedFiles.php");
           </svg>
         </div>
       </div>
-      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="assets/images/livethumbnails/newfacesonmwonyaa.png" alt="">
+      <div class="videoCard" onclick="showPreviewDialog();"><img class="videoCard__thumbnail" src="https://artist.mwonyaa.com/assets/images/livethumbnails/newfacesonmwonyaa.png" alt="">
         <div class="videoCard__info">
-          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
+          <div class="MuiAvatar-root MuiAvatar-circle videoCard_avatar"><img alt="https://avatars2.githubusercontent.com/u/41443166?s=460&amp;u=794643de8ee050ee778fcc9fa713d68cbfcdf449&amp;v=4" src="https://artist.mwonyaa.com/assets/images/livethumbnails/liveuserprofile.png" class="MuiAvatar-img"></div>
           <div class="video__text">
             <h4>New Faces and Game changers</h4>
             <p>Mwonyaa</p>

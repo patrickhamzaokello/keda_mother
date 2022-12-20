@@ -964,9 +964,9 @@ function notifyMe(messagetext) {
 
     var options = {
       body: messagetext,
-      icon: "assets/images/artistprofiles/Wesley_profile_20210406163905_01978.jpg",
+      icon: "https://artist.mwonyaa.com/assets/images/artistprofiles/Wesley_profile_20210406163905_01978.jpg",
       badge:
-        "assets/images/artistprofiles/Wesley_profile_20210406163905_01978.jpg",
+        "https://artist.mwonyaa.com/assets/images/artistprofiles/Wesley_profile_20210406163905_01978.jpg",
       tag: "Welcome notification",
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu70PrXPkd7-hFULbCex5-n5dfR88z7hF1Ag&usqp=CAU",

@@ -24,7 +24,7 @@ include("includes/queries/weeklytopsongs.php");
     <?php if ($recentSongIds) : ?>
         <div class="entityInfo">
             <div class="leftSection">
-                <img src="assets/images/createdplaylist/weekly.png">
+                <img src="https://artist.mwonyaa.com/assets/images/createdplaylist/weekly.png">
             </div>
 
             <div class="rightSection">

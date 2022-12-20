@@ -68,7 +68,7 @@
             <div class="dismissablecontent">
 
                 <div class="previewimagecontainer">
-                    <img src="assets/images/livethumbnails/createplaylistlive.png" alt="images">
+                    <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/createplaylistlive.png" alt="images">
                 </div>
 
                 <div class="dismissablecontentdesc">
@@ -129,7 +129,7 @@
         <div class="dismissablecontent">
 
             <div class="previewimagecontainer">
-                <img src="assets/images/livethumbnails/createplaylistlive.png" alt="images">
+                <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/createplaylistlive.png" alt="images">
             </div>
 
             <div class="dismissablecontentdesc">

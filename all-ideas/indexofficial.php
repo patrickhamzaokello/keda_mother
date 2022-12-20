@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mwonya Home</title>
-    <link rel="icon" href="assets/images/musiclogo.png" type="image/png">
+    <link rel="icon" href="https://artist.mwonyaa.com/assets/images/musiclogo.png" type="image/png">
 
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.css">

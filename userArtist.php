@@ -179,7 +179,7 @@
         <div class="dismissablecontent">
 
             <div class="previewimagecontainer">
-                <img src="assets/images/livethumbnails/premium.svg" alt="images">
+                <img src="https://artist.mwonyaa.com/assets/images/livethumbnails/premium.svg" alt="images">
             </div>
 
             <div class="dismissablecontentdesc">
