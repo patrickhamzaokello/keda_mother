@@ -136,7 +136,7 @@ function menuhandler() {
             </span>
 
             <span class="user__info__name" role="link" tabindex="0" onclick="openPage('settings')">
-                <span class="first"><?= $userLoggedIn->getcheckuser() ? $userLoggedIn->getUsername():$username ?></span>
+                <span class="first"><?= $username ?></span>
             </span>
 
         </div>
