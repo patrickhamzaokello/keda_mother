@@ -12,7 +12,7 @@ $con = $db->getConnString();
 
 if (isset($_SESSION['userLoggedIn'])) {
     $userLoggedIn = new User($con,  $_SESSION['userLoggedIn']);
-    $username = $userLoggedIn->getUsername();
+    $username = $username;
     $userId = $userLoggedIn->getUserId();
 
     echo "<script>userLoggedIn = '$username';</script>";

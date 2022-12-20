@@ -186,7 +186,7 @@ include("includes/includedFiles.php"); ?>
 
     <nav class="optionsMenu">
         <input type="hidden" class="songId">
-        <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+        <?php echo Playlist::getPlaylistsDropdown($con, $username); ?>
     </nav>
 
 

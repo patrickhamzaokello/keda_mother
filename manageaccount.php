@@ -16,7 +16,7 @@ $("#mainContent").show();
             <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="">
 
             <p class="userlable">USER NAME </P>
-            <P class="uservalue"><?php echo $userLoggedIn->getUsername(); ?></P>
+            <P class="uservalue"><?php echo $username; ?></P>
 
             <p class="userlable">FULL NAME</P>
             <P class="uservalue"><?php echo $userLoggedIn->getFirstAndLastName(); ?></P>

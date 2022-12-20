@@ -68,7 +68,7 @@ if (!isset($_SESSION['userLoggedIn'])) {
     <?php
 
     $userLoggedIn = new User($con, $username);
-    $username = $userLoggedIn->getUsername();
+    $username = $username;
     $userId = $userLoggedIn->getUserId();
 
     ?>

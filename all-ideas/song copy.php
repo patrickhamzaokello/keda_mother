@@ -346,7 +346,7 @@ $formated_songartist = preg_replace("/[^A-Za-z0-9 ]/", '', $artist->getName());
 
 <nav class="optionsMenu">
     <input type="hidden" class="songId">
-    <?php echo Playlist::getPlaylistsDropdown($con, $userLoggedIn->getUsername()); ?>
+    <?php echo Playlist::getPlaylistsDropdown($con, $username); ?>
 </nav>
 
 

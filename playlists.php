@@ -12,7 +12,7 @@
 
     <?php
     $userplaylistsarray = array();
-    $username = $userLoggedIn->getUsername();
+    $username = $username;
     $playlistQuery = mysqli_query($con, "SELECT * FROM playlists where owner ='$username'");
 
     //pushing to publicplaylist array

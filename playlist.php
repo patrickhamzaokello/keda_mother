@@ -68,7 +68,7 @@ try {
          */
 
         $idP = $playlist->getId();
-        $username = $userLoggedIn->getUsername();
+        $username = $username;
 
         /***
          * check for the playlist id, if the owner is the same as the current user 
