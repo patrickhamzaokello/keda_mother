@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700;900&display=swap');
 
 :root{
 
@@ -8,14 +7,28 @@
   --al-light-color: #fff;
   --al-background-color: #fce501;
   --al-disablebutton-color: #BEC7C7;
+  /*main colors*/
+  --bg-color: #331354;
+  --main-color: #401b68;
+  --nav_head-text-color: #833db7;
+  --text-color: #e3dae9;
+
 }
 
+*{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
 
 body {
-  background: #1c0529;
+  background: var(--main-color);
   font-family: "Roboto", sans-serif;
-  /* letter-spacing: 1px; */
-  /* background: #180026; */
   height: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -31,10 +44,10 @@ body a:hover {
 }
 
 .header {
-  background: #331354;
+  background: var(--bg-color);
   padding: 10px;
   color: #aaaaaa;
-  border-bottom: 1px solid #331354;
+  border-bottom: 1px solid var(--bg-color);
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -134,7 +147,7 @@ body a:hover {
 
 .navigation {
   padding: 15px;
-  background: #180026;
+  background: var(--bg-color);
   color: #aaaaaa;
   /* height: 64%; */
   height: calc(100% - 121px);
@@ -1312,12 +1325,13 @@ ul {
 }
 
 .navigation__list__item {
-  color: #aaaaaa;
+  color: var(--text-color);
   /* padding: 5px 20px; */
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .noResults {
@@ -1461,7 +1475,7 @@ ul {
   /* height: 26%; */
   height: 64px;
   width: 100%;
-  background: #180026;
+  background: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1478,8 +1492,8 @@ ul {
 }
 
 .playing {
-  background: #180026;
-  border-bottom: 1px solid #180026;
+  background: var(--bg-color);
+  border-bottom: 1px solid var(--bg-color);
   display: flex;
   /* height: 10%; */
   height: 57px;
@@ -1573,7 +1587,7 @@ ul {
 }
 
 .current-track {
-  background: #331354;
+  background: var(--bg-color);
   padding: 5px 15px;
   display: flex;
   flex-flow: row wrap;
@@ -3898,12 +3912,11 @@ ion-icon {
 
 .h2,
 .navigation__list__header {
-  /* padding-top: 15px; */
-  /* font-size: medium; */
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 5px;
-  color: #ceb8f5;
+  color: var(--nav_head-text-color);
+  font-size: 2rem;
 }
 
 .navitems span {
