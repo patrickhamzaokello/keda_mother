@@ -25,10 +25,10 @@ include("includes/includedFiles.php");
       <div class="dismissablecontentdesc">
 
         <div class="dismissablecontenttext">
-        <h4>Mwonyaa Shop <span>FEATURED</span></h4>
+        <h4>Mwonya Shop <span>FEATURED</span></h4>
           <h2>Building a Greator Market Place for Artists and Creators to sell merchandise and gift cards</h2>
 
-          <p>Discover the best selling items from your favourite artists on Mwonyaa shop</p>
+          <p>Discover the best selling items from your favourite artists on Mwonya shop</p>
         </div>
 
         <div class="dismissablecontentbutton">
@@ -65,10 +65,10 @@ include("includes/includedFiles.php");
       <div class="dismissablecontentdesc">
 
         <div class="dismissablecontenttext">
-          <h4>Mwonyaa Shop <span>FEATURED</span></h4>
+          <h4>Mwonya Shop <span>FEATURED</span></h4>
           <h2>Building a Greator Market Place for Artists and Creators to sell merchandise and gift cards</h2>
 
-          <p>Discover the best selling items from your favourite artists on Mwonyaa shop</p>
+          <p>Discover the best selling items from your favourite artists on Mwonya shop</p>
         </div>
 
         <div class="dismissablecontentbutton">

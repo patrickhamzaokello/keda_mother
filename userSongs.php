@@ -183,7 +183,7 @@ include("includes/includedFiles.php"); ?>
       <div class="dismissablecontentdesc">
 
         <div class="dismissablecontenttext">
-          <h4>Mwonyaa Stream</h4>
+          <h4>Mwonya Stream</h4>
           <h2>Your Liked Songs</h2>
 
           <p>This is a premium feature. it shows all songs that you liked in your personal library. create an account or sign up to access this feature</p>
@@ -229,7 +229,7 @@ include("includes/includedFiles.php"); ?>
       .parent()
       .addClass("pkkkk");
     $(".pkkkk").css("border-left", "2px solid yellow");
-    $(".pkkkk").css("background", "#2c093a");
+    $(".pkkkk").css("background", "#613a8c");
   } else {
     $(".pkkkk").css("border-left", "none");
     $(".pkkkk").css("background", "none");

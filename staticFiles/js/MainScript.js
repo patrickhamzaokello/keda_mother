@@ -930,7 +930,7 @@ function Audio() {
         .parent()
         .addClass("pkkkk");
       $(".pkkkk").css("border-left", "2px solid yellow");
-      $(".pkkkk").css("background", "#2c093a");
+      $(".pkkkk").css("background", "#613a8c");
     } else {
       $(".pkkkk").css("border-left", "none");
       $(".pkkkk").css("background", "none");
@@ -972,7 +972,7 @@ function notifyMe(messagetext) {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu70PrXPkd7-hFULbCex5-n5dfR88z7hF1Ag&usqp=CAU",
     };
 
-    var notification = new Notification((title = "Mwonyaa Music"), options);
+    var notification = new Notification((title = "Mwonya Music"), options);
   }
 
   // Otherwise, we need to ask the user for permission

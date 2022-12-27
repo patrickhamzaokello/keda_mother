@@ -6,7 +6,7 @@ $con = $db->getConnString();
 
 if (isset($_POST['creator'])) {
 
-	$name = "Mwonyaa";
+	$name = "Mwonya";
 	$username = $_POST['creator'];
 	$userid = $_POST['creator'];
 

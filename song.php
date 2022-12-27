@@ -78,11 +78,11 @@ $formated_songartist = preg_replace("/[^A-Za-z0-9 ]/", '', $artist->getName());
                         Copy Link
                     </button>
 
-                    <a class="twt" href="https://twitter.com/share?url=<?= $urlquery ?>%0A&text=Listen to <?= $formated_songtitle ?> by <?= $formated_songartist ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $formated_songartist ?> now.%0A&hashtags=mwonyaateam <?= $twitterusername ?> ,ugandanstreamingplatform%0A" onclick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter"> <button class="sbutton songtwitter" value="ok">
+                    <a class="twt" href="https://twitter.com/share?url=<?= $urlquery ?>%0A&text=Listen to <?= $formated_songtitle ?> by <?= $formated_songartist ?> on Mwonya Stream. Click the link below to Stream Content Created by <?= $formated_songartist ?> now.%0A&hashtags=mwonyaateam <?= $twitterusername ?> ,ugandanstreamingplatform%0A" onclick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter"> <button class="sbutton songtwitter" value="ok">
                             Twitter
                         </button></a>
 
-                    <a class="wht" href="whatsapp://send?text=Listen to <?= $formated_songtitle ?> by <?= $formated_songartist ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $formated_songartist ?> now. <?= $urlquery ?>" data-action="share/whatsapp/share" onClick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp"> <button class="sbutton songwhatsapp" value="ok">
+                    <a class="wht" href="whatsapp://send?text=Listen to <?= $formated_songtitle ?> by <?= $formated_songartist ?> on Mwonya Stream. Click the link below to Stream Content Created by <?= $formated_songartist ?> now. <?= $urlquery ?>" data-action="share/whatsapp/share" onClick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp"> <button class="sbutton songwhatsapp" value="ok">
                             WhatsApp
                         </button></a>
                 </div>

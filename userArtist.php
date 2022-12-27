@@ -185,7 +185,7 @@
             <div class="dismissablecontentdesc">
 
                 <div class="dismissablecontenttext">
-                    <h4>Mwonyaa Stream</h4>
+                    <h4>Mwonya Stream</h4>
                     <h2>Favourite Artists</h2>
 
                     <p>Create an account to be able to Check Here often for new Content from your Favourite Artists & Creators and also manage Artists you follow</p>

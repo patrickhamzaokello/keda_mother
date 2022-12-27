@@ -74,10 +74,10 @@
                 <div class="dismissablecontentdesc">
 
                     <div class="dismissablecontenttext">
-                        <h4>Mwonyaa Stream</h4>
+                        <h4>Mwonya Stream</h4>
                         <h2>Create New Playlist</h2>
 
-                        <p>Create Playlists and Share with Your Friends or Let it be Featured on Mwonyaa to be view and Listened to by Everyone</p>
+                        <p>Create Playlists and Share with Your Friends or Let it be Featured on Mwonya to be view and Listened to by Everyone</p>
                     </div>
 
                     <div class="dismissablecontentbutton">
@@ -135,10 +135,10 @@
             <div class="dismissablecontentdesc">
 
                 <div class="dismissablecontenttext">
-                    <h4>Mwonyaa Stream</h4>
+                    <h4>Mwonya Stream</h4>
                     <h2>Create New Playlist</h2>
 
-                    <p>Create Playlists and Share with Your Friends or Let it be Featured on Mwonyaa to be view and Listened to by Everyone</p>
+                    <p>Create Playlists and Share with Your Friends or Let it be Featured on Mwonya to be view and Listened to by Everyone</p>
                 </div>
 
                 <div class="dismissablecontentbutton">

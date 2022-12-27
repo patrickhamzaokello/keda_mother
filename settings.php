@@ -52,10 +52,10 @@ $("#mainContent").show();
         <div class="dismissablecontentdesc">
 
             <div class="dismissablecontenttext">
-                <h4>Mwonyaa Stream</h4>
+                <h4>Mwonya Stream</h4>
                 <h2>Account Settings</h2>
 
-                <p>Manage your Account and stay upto date with new Feature Releases on Mwonyaa. Get Monthly Mwonyaa Points and information on your listening history</p>
+                <p>Manage your Account and stay upto date with new Feature Releases on Mwonya. Get Monthly Mwonya Points and information on your listening history</p>
             </div>
 
             <div class="dismissablecontentbutton">

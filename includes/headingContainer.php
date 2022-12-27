@@ -37,7 +37,7 @@ function menuhandler() {
     <div class="page-flows">
 
         <span class="flow" role="link" tabindex="0" onclick="openPage('index'); albumnavitem()">
-            Mwonyaa
+            Mwonya Web
         </span>
 
 
@@ -45,7 +45,7 @@ function menuhandler() {
 
     <div class="search">
 
-        <input type="text" name="searchinputfield" class="searchInput" value="<?php echo $term ?>" placeholder="Search"
+        <input type="text" name="searchinputfield" class="searchInput" value="<?php echo $term ?>" placeholder="Search..."
             onfocus="this.value = this.value" />
 
         <span class="spinner"> <img src="https://artist.mwonyaa.com/assets/images/icons/spinner.gif" alt=""></span>

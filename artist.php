@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_GET['id'])) {
-    $artistId =  $_GET['id'];
+    $artistId = $_GET['id'];
 } else {
     header("Location:index");
 }
@@ -26,11 +26,10 @@ $twitterusername = "@MwonyaaStream"
 </script>
 
 
-
-
 <!-- headerends -->
 
-<div class="artist__header" style="background-image: url('<?php echo $artist->getArtistCoverPath(); ?>'); background-size:cover; background-position:center">
+<div class="artist__header"
+     style="background-image: url('<?php echo $artist->getArtistCoverPath(); ?>'); background-size:cover; background-position:center">
 
     <div class="artistoverlay">
     </div>
@@ -43,18 +42,30 @@ $twitterusername = "@MwonyaaStream"
 
 
                 <a>
-                    <button id="songcopybutton" class="copybutton button-dark" value="ok" onclick="sharebutton('<?= $urlquery ?>')">
+                    <button id="songcopybutton" class="copybutton button-dark" value="ok"
+                            onclick="sharebutton('<?= $urlquery ?>')">
                         Copy Link
                     </button>
                 </a>
 
-                <a class="whatapponphone" href="whatsapp://send?text=I'm Listening to <?= $artist->getName(); ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $artist->getName(); ?> now. <?= $urlquery ?>" data-action="share/whatsapp/share" onClick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on whatsapp"> <button class="whatsappbutton button-dark" value="ok">
+                <a class="whatapponphone"
+                   href="whatsapp://send?text=I'm Listening to <?= $artist->getName(); ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $artist->getName(); ?> now. <?= $urlquery ?>"
+                   data-action="share/whatsapp/share"
+                   onClick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                   target="_blank" title="Share on whatsapp">
+                    <button class="whatsappbutton button-dark" value="ok">
                         WhatsApp
-                    </button></a>
+                    </button>
+                </a>
 
-                <a class="twitter-share-button" href="https://twitter.com/share?url=<?= $urlquery ?>%0A&text=I'm Listening to <?= $artist->getName(); ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $artist->getName(); ?> now.%0A&hashtags=mwonyaateam <?= $twitterusername ?> ,ugandanstreamingplatform%0A" onclick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Twitter"> <button class="twitterbutton button-dark" value="ok">
+                <a class="twitter-share-button"
+                   href="https://twitter.com/share?url=<?= $urlquery ?>%0A&text=I'm Listening to <?= $artist->getName(); ?> on Mwonyaa Stream. Click the link below to Stream Content Created by <?= $artist->getName(); ?> now.%0A&hashtags=mwonyaateam <?= $twitterusername ?> ,ugandanstreamingplatform%0A"
+                   onclick="javascript:(isRegistered != 'registered') ? showPreviewDialog() : window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                   target="_blank" title="Share on Twitter">
+                    <button class="twitterbutton button-dark" value="ok">
                         Twitter
-                    </button></a>
+                    </button>
+                </a>
 
             </div>
 
@@ -72,7 +83,7 @@ $twitterusername = "@MwonyaaStream"
 
         <div class="profile__img">
 
-            <img src="<?php echo $artist->getProfilePath(); ?>" />
+            <img src="<?php echo $artist->getProfilePath(); ?>"/>
 
 
         </div>
@@ -89,7 +100,6 @@ $twitterusername = "@MwonyaaStream"
                     <i class="ion-ios-play"></i>
                     Play
                 </button>
-
 
 
                 <div id="artistlogic">
@@ -148,15 +158,15 @@ $twitterusername = "@MwonyaaStream"
         <div class="artist__navigation__friends">
 
             <a href="#">
-                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt=""/>
             </a>
 
             <a href="#">
-                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt=""/>
             </a>
 
             <a href="#">
-                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt="" />
+                <img src="https://artist.mwonyaa.com/assets/images/profile-pics/me.jpg" alt=""/>
             </a>
 
         </div>
@@ -164,8 +174,6 @@ $twitterusername = "@MwonyaaStream"
     </div>
 
 </div>
-
-
 
 
 <div class="artist__content">
@@ -222,13 +230,11 @@ $twitterusername = "@MwonyaaStream"
                     </div>
                     <!-- / -->
 
-<div class="mwonyaaadspace">
-            <div class="adsspace">
-                <img style="width:100%; margin-bottom: 1em;" src="mwonyaastreamsadhere.gif" alt="adspace">
-            </div>
-        </div>
-
-
+<!--                    <div class="mwonyaaadspace">-->
+<!--                        <div class="adsspace">-->
+<!--                            <img style="width:100%; margin-bottom: 1em;" src="mwonyaastreamsadhere.gif" alt="adspace">-->
+<!--                        </div>-->
+<!--                    </div>-->
 
 
                     <!-- Popular-->
@@ -242,7 +248,6 @@ $twitterusername = "@MwonyaaStream"
                         $songIdArray = $artist->getSongIds();
 
                         $i = 1;
-
 
 
                         foreach ($songIdArray as $songId) {
@@ -311,9 +316,9 @@ $twitterusername = "@MwonyaaStream"
 
                             if (
                                 $("input[value=" + currentPlaylist[currentIndex] + "]")
-                                .parent()
-                                .parent()
-                                .hasClass("pkkkk")
+                                    .parent()
+                                    .parent()
+                                    .hasClass("pkkkk")
                             ) {
                                 $(".track").removeClass("pkkkk");
                                 $("input[value=" + currentPlaylist[currentIndex] + "]")
@@ -321,7 +326,7 @@ $twitterusername = "@MwonyaaStream"
                                     .parent()
                                     .addClass("pkkkk");
                                 $(".pkkkk").css("border-left", "2px solid yellow");
-                                $(".pkkkk").css("background", "#2c093a");
+                                $(".pkkkk").css("background", "#613a8c");
                             } else {
                                 $(".pkkkk").css("border-left", "none");
                                 $(".pkkkk").css("background", "none");
@@ -329,7 +334,6 @@ $twitterusername = "@MwonyaaStream"
                                 $(".track").removeClass("pkkkk");
                             }
                         </script>
-
 
 
                     </div>
@@ -384,10 +388,7 @@ $twitterusername = "@MwonyaaStream"
                         }
 
 
-
-
                         ?>
-
 
 
                     </div>
@@ -401,7 +402,6 @@ $twitterusername = "@MwonyaaStream"
                         <span class="section-title">Albums</span>
 
 
-
                     </div>
 
                     <div class="album">
@@ -413,8 +413,6 @@ $twitterusername = "@MwonyaaStream"
                             $albumQuery = mysqli_query($con, "SELECT * FROM albums where artist='$artistId' and tag != 'ad'");
 
                             while ($row = mysqli_fetch_array($albumQuery)) {
-
-
 
 
                                 echo "<li class='albumlist'>
@@ -443,7 +441,6 @@ $twitterusername = "@MwonyaaStream"
 
         </div>
         <!-- / -->
-
 
 
     </div>

@@ -12,6 +12,10 @@
   --main-color: #401b68;
   --nav_head-text-color: #833db7;
   --text-color: #e3dae9;
+  --alt-color: #972adb;
+  --track_bd-color: #433e72;
+
+  --latest-release-color: #890065;
 
 }
 
@@ -85,16 +89,12 @@ body a:hover {
 }
 
 .header .search input {
-  border-radius: 15px;
+  border-radius: 4px;
   border: none;
-  background: white;
-  color: #181818;
-  padding-left: 30px;
+  background: #ffffff;
+  color: #000000;
+  padding: 7px 20px;
   outline: none;
-  background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/ios-search.svg);
-  background-repeat: no-repeat;
-  background-size: 10%;
-  background-position: 5px;
 }
 
 .menucontext {
@@ -1915,12 +1915,12 @@ ion-icon {
 
 .pkkkk {
   border-left: 2px solid yellow;
-  background: #180026;
+  background: var(--alt-color);
 }
 
 .holdsongid{
   display: none;
-  background: #180026;
+  background: var(--alt-color);
   outline: none;
   border: none;
 }
@@ -3108,7 +3108,7 @@ ion-icon {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #1c0529ba;
+  background-color: #8c00ff82;
 }
 
 .artist__header:after {
@@ -3320,12 +3320,15 @@ ion-icon {
 
 .artist__content .overview__artist .latest-release__art {
   width: 75px;
+  background: var(--latest-release-color);
+
 }
 
 .artist__content .overview__artist .latest-release__art img {
   width: 75px;
   height: 75px;
   object-fit: cover;
+  padding: 5px;
 }
 
 .artist__content .overview__artist .latest-release__song {
@@ -3333,7 +3336,7 @@ ion-icon {
   width: -webkit-calc(100% - 75px);
   width: -moz-calc(100% - 75px);
   padding: 10px 15px;
-  background: #180026;
+  background: var(--latest-release-color);
   color: #aaaaaa;
   display: flex;
   flex-flow: column wrap;
@@ -3341,7 +3344,8 @@ ion-icon {
 }
 
 .artist__content .overview__artist .latest-release__song__title {
-  color: #c8c8c8;
+  color: #ffffff;
+  font-size: 1.7rem;
 }
 
 .artist__content .overview__related {
@@ -3437,7 +3441,7 @@ ion-icon {
 }
 
 .tracks .track {
-  border-top: 1px solid #1f102d;
+  border-top: 1px solid var(--track_bd-color);
   height: 42px;
   display: flex;
   padding: 0.4em 0;
@@ -3446,11 +3450,11 @@ ion-icon {
 }
 
 .tracks .track:hover {
-  background: #1f102d;
+  background: var(--track_bd-color);
 }
 
 .tracks .track:last-child {
-  border-bottom: 1px solid #1f102d;
+  border-bottom: 1px solid var(--track_bd-color);
 }
 
 .tracks .track__art img {
@@ -3580,9 +3584,10 @@ ion-icon {
 }
 
 .related-artists .related-artist {
-  background: #180026;
-  padding: 5px;
+  background: #3b1262;
+  padding: 10px;
   margin-bottom: 2px;
+
 }
 
 .related-artists .related-artist:hover {
@@ -3877,7 +3882,7 @@ ion-icon {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: #3e154f;
+  background: #b400ff;
 }
 
 @media (max-width: 650px) {
@@ -3916,7 +3921,7 @@ ion-icon {
   letter-spacing: 1px;
   margin-bottom: 5px;
   color: var(--nav_head-text-color);
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .navitems span {

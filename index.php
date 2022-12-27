@@ -103,7 +103,7 @@ include("includes/queries/browsequery.php");
                             <div class="hs__item__image__wrapper">
                                 <img class="hs__item__image" src="<?= $playlist->getCoverimage() ?>" alt="" />
                             </div>
-                            <div class="hs__item__description"><span class="hs__item__title"><?= $playlist->getName() ?></span><span class="hs__item__subtitle">Mwonyaa Stream</span></div>
+                            <div class="hs__item__description"><span class="hs__item__title"><?= $playlist->getName() ?></span><span class="hs__item__subtitle">Mwonya Stream</span></div>
                         </li>
 
 
@@ -187,7 +187,7 @@ include("includes/queries/browsequery.php");
             <div class="hs__header">
                 <div class="sectionheadingroup">
                     <h5><span class="hs__item__subtitle">Featured</span></h5>
-                    <h2 class="hs__headline">Mwonyaa Podcasts</h2>
+                    <h2 class="hs__headline">Mwonya Podcasts</h2>
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
@@ -286,7 +286,7 @@ include("includes/queries/browsequery.php");
             <div class="hs__header">
                 <div class="sectionheadingroup">
                     <h5><span class="hs__item__subtitle">Recently Updated</span></h5>
-                    <h2 class="hs__headline">Mwonyaa Poems</h2>
+                    <h2 class="hs__headline">Mwonya Poems</h2>
                 </div>
                 <div class="hs__arrows"><a class="arrow disabled arrow-prev"></a><a class="arrow arrow-next"></a></div>
             </div>
