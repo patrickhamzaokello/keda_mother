@@ -32,7 +32,6 @@
 
 body {
   background: var(--main-color);
-  font-family: "Roboto", sans-serif;
   height: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -730,7 +729,6 @@ body a:hover {
   border: 1px solid transparent;
   border-radius: 4px;
   color: #fff;
-  font-family: inherit;
   font-size: 14px;
   height: 40px;
   padding: 0 12px;
@@ -880,7 +878,6 @@ body a:hover {
 .sectionheadingroup{
   flex: 1;
   padding-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
 }
 
 .hs__arrows {
@@ -950,10 +947,9 @@ body a:hover {
   overflow: hidden;
   white-space: nowrap;
   width: 200px;
-  font-family: 'Montserrat', sans-serif;
 }
 .hs__item__subtitle {
-  color: #aaa;
+  color: #ffffff;
   display: block;
 }
 
@@ -2055,7 +2051,6 @@ ion-icon {
   font-size: 1.25rem;
   align-items: center;
   flex-shrink: 0;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1;
   user-select: none;
   border-radius: 50%;
@@ -2085,7 +2080,6 @@ ion-icon {
   font-size: 1.25rem;
   /* align-items: center;
   flex-shrink: 0; */
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   line-height: 1;
   user-select: none;
   /* border-radius: 50%;
@@ -4052,7 +4046,6 @@ button:hover {
   min-width: 50px;
   overflow: hidden;
   white-space: nowrap;
-  font-family: sans-serif;
   font-size: 13px;
   color: #866f9d;
   text-decoration: none !important;
