@@ -101,8 +101,8 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
     <meta property="og:update_time" content="Mwonya Music">
     <meta property="og:image" content="https://mwonya.com/staticFiles/meta_og_image.png">
     <meta property="og:image:secure_url" content="https://mwonya.com/staticFiles/meta_og_image.png">
-    <meta property="og:image:width" content="500">
-    <meta property="og:image:height" content="500">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
     <meta property="og:image:alt" content="Mwonya logo">
 <!--    metatagsend-->
 
