@@ -1,6 +1,6 @@
 <?php
 
-$userId = $userLoggedIn->getUserId();
+$userId = $userId;
 
 $recentSongIds = array();
 

@@ -8,13 +8,8 @@ require "classes/User.php";
 $db = new Database();
 $con = $db->getConnString();
 
-
-$userLoggedIn = new User($con, $_SESSION['userLoggedIn']);
-
-
-
-$username = $userLoggedIn->getUsername();
-$userID = $userLoggedIn->getUserId();
+$username = $username;
+$userID = $userId;
 
 $usersquery = mysqli_query($con, "SELECT * FROM users where username != '$username' ");
 
