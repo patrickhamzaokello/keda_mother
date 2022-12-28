@@ -91,7 +91,7 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
 <!--    metatags-->
 
     <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:title" content="Mwonya: African Entertainment">
     <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
     <meta property="og:url" content="https://www.mwonya.com/">
@@ -99,10 +99,10 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
     <meta property="article:published_time" content="02 Dec 2022">
     <meta property="article:modified_time" content="02 Dec 2022">
     <meta property="og:update_time" content="Mwonya Music">
-    <meta property="og:image" content="https://media-exp1.licdn.com/dms/image/C4D22AQFeC9cMwvFOEg/feedshare-shrink_800/0/1667981882335?e=2147483647&v=beta&t=mZ2SeUTqU0qN3nSt7GHg27F8403O6P-THTB_2bcuqS0">
-    <meta property="og:image:secure_url" content="https://media-exp1.licdn.com/dms/image/C4D22AQFeC9cMwvFOEg/feedshare-shrink_800/0/1667981882335?e=2147483647&v=beta&t=mZ2SeUTqU0qN3nSt7GHg27F8403O6P-THTB_2bcuqS0">
-    <meta property="og:image:width" content="250">
-    <meta property="og:image:height" content="150">
+    <meta property="og:image" content="https://mwonya.com/staticFiles/meta_og_image.png">
+    <meta property="og:image:secure_url" content="https://mwonya.com/staticFiles/meta_og_image.png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
     <meta property="og:image:alt" content="Mwonya logo">
 <!--    metatagsend-->
 
