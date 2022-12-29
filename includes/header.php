@@ -91,7 +91,7 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
 <!--    metatags-->
 
     <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="article">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Mwonya: African Entertainment">
     <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
     <meta property="og:url" content="https://www.mwonya.com/">
