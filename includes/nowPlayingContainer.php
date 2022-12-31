@@ -24,18 +24,13 @@ if ($userRegstatus != "registered") {
 }
 
 
-
-
 $jsonArray = json_encode($resultArray);
 
 ?>
 
 
-
-
-
 <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
         var newPlaylist = <?php echo $jsonArray; ?>;
         audioElement = new Audio();
         setTrack(newPlaylist[0], newPlaylist, false);
@@ -47,7 +42,28 @@ $jsonArray = json_encode($resultArray);
         //     e.preventDefault();
         // });
 
-        var audioitem = audioElement.audio;
+        // Get a reference to the media controller
+        const audioitem = audioElement.audio;
+
+
+        document.addEventListener("beforeinput", (event) => {
+            if (event.inputType === "mediaNextTrack") {
+                // The user pressed the "next track" button
+                audioitem.paused ? nextSong() : nextSong();
+
+            } else if (event.inputType === "mediaPreviousTrack") {
+                // The user pressed the "previous track" button
+                audioitem.paused ? prevSong() : prevSong();
+
+            } else if (event.inputType === "mediaPlayPause") {
+                // The user pressed the "play/pause" button
+                audioitem.paused ? playSong() : pauseSong();
+
+            }
+        });
+
+
+        // var audioitem = audioElement.audio;
 
 
         // if (audioitem) {
@@ -91,28 +107,28 @@ $jsonArray = json_encode($resultArray);
         // }
 
 
-        $(".playbackBar .progressBar").mousedown(function() {
+        $(".playbackBar .progressBar").mousedown(function () {
             mouseDown = true;
         });
 
-        $(".playbackBar .progressBar").mousemove(function(e) {
+        $(".playbackBar .progressBar").mousemove(function (e) {
             if (mouseDown) {
                 timeFromOffset(e, this);
             }
         });
 
 
-        $(".playbackBar .progressBar").mouseup(function(e) {
+        $(".playbackBar .progressBar").mouseup(function (e) {
             timeFromOffset(e, this);
 
         });
 
         // volume bar updater when dragging.
-        $(".control.volume .progressBar").mousedown(function() {
+        $(".control.volume .progressBar").mousedown(function () {
             mouseDown = true;
         });
 
-        $(".control.volume  .progressBar").mousemove(function(e) {
+        $(".control.volume  .progressBar").mousemove(function (e) {
             if (mouseDown) {
                 var percentage = e.offsetX / $(this).width();
 
@@ -123,7 +139,7 @@ $jsonArray = json_encode($resultArray);
             }
         });
 
-        $(".control.volume  .progressBar").mouseup(function(e) {
+        $(".control.volume  .progressBar").mouseup(function (e) {
             var percentage = e.offsetX / $(this).width();
 
             if (percentage >= 0 && percentage <= 1) {
@@ -131,7 +147,7 @@ $jsonArray = json_encode($resultArray);
             }
         });
 
-        $(document).mouseup(function() {
+        $(document).mouseup(function () {
             mouseDown = false;
         });
 
@@ -174,7 +190,7 @@ $jsonArray = json_encode($resultArray);
     }
 
 
-    serialize = function(obj) {
+    serialize = function (obj) {
         var str = [];
         for (var p in obj)
             if (obj.hasOwnProperty(p)) {
@@ -182,7 +198,6 @@ $jsonArray = json_encode($resultArray);
             }
         return str.join("&");
     }
-
 
 
     function songQueue() {
@@ -215,7 +230,6 @@ $jsonArray = json_encode($resultArray);
     }
 
 
-
     function nextSong() {
 
         if (repeat == true) {
@@ -238,7 +252,7 @@ $jsonArray = json_encode($resultArray);
                     pauseSong();
                     $.post("includes/handlers/ajax/getSimilarSongJson.php", {
                         songId: lasttrackid
-                    }, function(data) {
+                    }, function (data) {
 
                         var recommededsongsarray = JSON.parse(data);
 
@@ -318,7 +332,8 @@ $jsonArray = json_encode($resultArray);
         $(".control.repeat i").attr("class", imageName);
     }
 
-    function settings() {}
+    function settings() {
+    }
 
 
     function setMute() {
@@ -379,7 +394,7 @@ $jsonArray = json_encode($resultArray);
 
         $.post("includes/handlers/ajax/getSongJson.php", {
             songId: trackId
-        }, function(data) {
+        }, function (data) {
 
             var track = JSON.parse(data);
             $(".playing__song__name").text(track.title);
@@ -390,7 +405,7 @@ $jsonArray = json_encode($resultArray);
 
             $.post("includes/handlers/ajax/getArtistJson.php", {
                 artistId: track.artist
-            }, function(data) {
+            }, function (data) {
                 var artist = JSON.parse(data);
                 $(".playing__song__artist").text(artist.name);
                 $(".playing__song__artist").attr("onclick", "openPage('artist?id=" + artist.id + " ')");
@@ -403,7 +418,7 @@ $jsonArray = json_encode($resultArray);
 
             $.post("includes/handlers/ajax/getAlbumJson.php", {
                 albumId: track.album
-            }, function(data) {
+            }, function (data) {
                 var album = JSON.parse(data);
                 $(".playing__art img").attr("src", album.artworkPath);
                 $(".playing__art img").attr("onclick", "openPage('album?id=" + album.id + "')");
@@ -477,7 +492,6 @@ $jsonArray = json_encode($resultArray);
 
     }
 </script>
-
 
 
 <section class="current-track">
