@@ -27,9 +27,9 @@ include("includes/includedFiles.php");
                 </div>
 
                 <div class="rightSection">
-                    <h2>Recommendations</h2>
+                    <h2>Trending 🔥</h2>
 
-                    <p>Songs Recommended For You</p>
+                    <p>Catch up with all the tracks trending and discover new music</p>
 
                     <button class="button-dark" onclick="playFirstSong()">
                         <i class="ion-ios-play"></i>

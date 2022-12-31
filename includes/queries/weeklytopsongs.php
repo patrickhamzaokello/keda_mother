@@ -1,20 +1,14 @@
 <?php
 
-$userId = $userId;
 
 $recentSongIds = array();
 
 
-// reset all songs played after 6 hours
-$resetWEEKPlays = mysqli_query($con, "UPDATE songs SET weekplays=0 WHERE  lastplayed < DATE_ADD(NOW(), INTERVAL -6 DAY)");
-
-// reset all songs played after a week
-// $resetWEEKPlays = mysqli_query($con, "UPDATE songs SET weekplays=0 WHERE  lastplayed < DATE_ADD(NOW(), INTERVAL -7 DAY)");
-
-$topchart = mysqli_query($con, "SELECT id FROM songs WHERE tag='music' ORDER BY weekplays DESC LIMIT 20");
+$sql_query = "SELECT f.songid, s.title, s.genre, s.tag,g.name, SUM(f.playsmonth) as total_plays FROM frequency f JOIN songs s ON f.songid = s.id JOIN genres g on s.genre = g.id WHERE f.lastPlayed BETWEEN DATE_SUB(NOW(), INTERVAL 1 WEEK) AND NOW() AND s.tag = 'music' AND s.genre != 3 GROUP BY f.songid ORDER BY total_plays DESC , f.lastPlayed DESC  LIMIT 20";
+$topchart = mysqli_query($con, $sql_query);
 
 
 while ($row = mysqli_fetch_array($topchart)) {
 
-    array_push($recentSongIds, $row['id']);
+    array_push($recentSongIds, $row['songid']);
 }

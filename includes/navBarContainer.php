@@ -48,11 +48,6 @@ include("includes/classes/Playlist.php");
             <div class="collapse in" id="yourMusic">
 
 
-                <span class="navigation__list__item" role="link" tabindex="0" onclick="openPage('history')">
-                    <i class="ion-person"></i>
-                    <span>Listening History</span>
-                </span>
-
                 <span class="navigation__list__item" role="link" tabindex="0" onclick="openPage('userSongs')">
                     <i class="ion-headphone"></i>
                     <span>Liked Songs</span>

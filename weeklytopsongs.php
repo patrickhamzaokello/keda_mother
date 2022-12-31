@@ -17,7 +17,7 @@ include("includes/queries/weeklytopsongs.php");
 
     <div class="overview__albums__head">
 
-        <span class="section-title">Weekly Top 10 Songs</span>
+        <span class="section-title">Weekly Top 20 Songs</span>
 
     </div>
 
@@ -28,9 +28,9 @@ include("includes/queries/weeklytopsongs.php");
             </div>
 
             <div class="rightSection">
-                <h2>Trending Songs</h2>
+                <h2>Chart Top 20</h2>
 
-                <p>Find all the Songs topping the charts this week Here</p>
+                <p>Playlist of the Mwonya Top 20 Song this week. Discover new music and Artists</p>
 
                 <button class="button-dark" onclick="playFirstSong()">
                     <i class="ion-ios-play"></i>

@@ -69,28 +69,28 @@ while ($row = mysqli_fetch_array($poemquery)) {
                     <div class="hs__item__image__wrapper">
                         <img class="hs__item__image" src="https://artist.mwonyaa.com/assets/images/createdplaylist/weekly.png" alt="" />
                     </div>
-                    <div class="hs__item__description"><span class="hs__item__title">Weekly Top Songs</span><span class="hs__item__subtitle">Mwonyaa Stream</span></div>
+                    <div class="hs__item__description"><span class="hs__item__title">Chart Top 20</span><span class="hs__item__subtitle">Mwonya Mix</span></div>
                 </li>
 
                 <li class="hs__item" role='link' tabindex='0' onclick='openPage("recentlyplayed")'>
                     <div class="hs__item__image__wrapper">
                         <img class="hs__item__image" src="https://artist.mwonyaa.com/assets/images/createdplaylist/recentlyplayed.png" alt="" />
                     </div>
-                    <div class="hs__item__description"><span class="hs__item__title">Recently Played Songs</span><span class="hs__item__subtitle">Mwonyaa Stream</span></div>
+                    <div class="hs__item__description"><span class="hs__item__title">Recently Played Songs</span><span class="hs__item__subtitle">Track - Playlist</span></div>
                 </li>
 
                 <li class="hs__item" role='link' tabindex='0' onclick='openPage("mostplayedsongs")'>
                     <div class="hs__item__image__wrapper">
                         <img class="hs__item__image" src="https://artist.mwonyaa.com/assets/images/createdplaylist/mostplayed.png" alt="" />
                     </div>
-                    <div class="hs__item__description"><span class="hs__item__title">Most Played</span><span class="hs__item__subtitle">Mwonyaa Stream</span></div>
+                    <div class="hs__item__description"><span class="hs__item__title">Most Played</span><span class="hs__item__subtitle">Track - Playlist</span></div>
                 </li>
 
                 <li class="hs__item" role='link' tabindex='0' onclick='openPage("recommendations")'>
                     <div class="hs__item__image__wrapper">
                         <img class="hs__item__image" src="https://artist.mwonyaa.com/assets/images/createdplaylist/recommended.png" alt="" />
                     </div>
-                    <div class="hs__item__description"><span class="hs__item__title">Recommended Songs</span><span class="hs__item__subtitle">Mwonyaa Stream</span></div>
+                    <div class="hs__item__description"><span class="hs__item__title">Trending Now 🔥</span><span class="hs__item__subtitle">Track - Playlist</span></div>
                 </li>
 
 

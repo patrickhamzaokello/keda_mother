@@ -36,7 +36,7 @@ function menuhandler() {
 
     <div class="page-flows">
 
-        <span class="flow" role="link" tabindex="0" onclick="openPage('index'); albumnavitem()">
+        <span style="color: white" class="flow" role="link" tabindex="0" onclick="openPage('index'); albumnavitem()">
             Mwonya Web
         </span>
 
