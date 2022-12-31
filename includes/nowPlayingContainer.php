@@ -45,65 +45,65 @@ $jsonArray = json_encode($resultArray);
         const audioitem = document.getElementById("myAudio");
 
 // Check if the audio element exists
-        if (audioitem) {
-            // Attach the keydown event listener to the document element
-            document.addEventListener("keydown", function(event) {
-                // Check if the event was triggered on an input element
-                if (event.target.tagName === "INPUT") {
-                    // The event was triggered on an input element, so do nothing
-                    return;
-                }
-
-                // Get the key code
-                const key = event.which || event.keyCode;
-
-                // Check the key code
-                switch (key) {
-                    case 32: // spacebar - pause and play
-                        // Eat the spacebar, so it does not scroll the page
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? playSong() : pauseSong();
-                        break;
-
-                    case 77: // m - mute key
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? setMute() : setMute();
-                        break;
-
-                    case 78: // n - next key
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? nextSong() : nextSong();
-                        break;
-
-                    case 80: // p -  previous key
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? prevSong() : prevSong();
-                        break;
-
-                    case 82: // r - repeat key
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? setRepeat() : setRepeat();
-                        break;
-
-                    case 83: // s - shuffle key
-                        event.preventDefault();
-
-                        // Check if the audio is paused
-                        audioitem.paused ? setShuffle() : setShuffle();
-                        break;
-                }
-            });
-        }
+//         if (audioitem) {
+//             // Attach the keydown event listener to the document element
+//             document.addEventListener("keydown", function(event) {
+//                 // Check if the event was triggered on an input element
+//                 if (event.target.tagName === "INPUT") {
+//                     // The event was triggered on an input element, so do nothing
+//                     return;
+//                 }
+//
+//                 // Get the key code
+//                 const key = event.which || event.keyCode;
+//
+//                 // Check the key code
+//                 switch (key) {
+//                     case 32: // spacebar - pause and play
+//                         // Eat the spacebar, so it does not scroll the page
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? playSong() : pauseSong();
+//                         break;
+//
+//                     case 77: // m - mute key
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? setMute() : setMute();
+//                         break;
+//
+//                     case 78: // n - next key
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? nextSong() : nextSong();
+//                         break;
+//
+//                     case 80: // p -  previous key
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? prevSong() : prevSong();
+//                         break;
+//
+//                     case 82: // r - repeat key
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? setRepeat() : setRepeat();
+//                         break;
+//
+//                     case 83: // s - shuffle key
+//                         event.preventDefault();
+//
+//                         // Check if the audio is paused
+//                         audioitem.paused ? setShuffle() : setShuffle();
+//                         break;
+//                 }
+//             });
+//         }
 
 
 
