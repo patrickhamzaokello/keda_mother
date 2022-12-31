@@ -20,7 +20,7 @@ workbox.googleAnalytics.initialize();
 
 // Register route handlers for runtimeCaching
 workbox.routing.registerRoute(
-    new RegExp('https://www.mwonyaa.com/*'),
+    new RegExp('https://www.mwonya.com/*'),
     new workbox.strategies.NetworkFirst({
       "cacheableResponse": { "statuses": [0, 200] },
       "cacheExpiration": { "maxAgeSeconds": 172800, "maxEntries": 500 }
@@ -42,6 +42,15 @@ workbox.routing.registerRoute(
     new workbox.strategies.StaleWhileRevalidate({
       "cacheableResponse": { "statuses": [0, 200] },
       "cacheExpiration": { "maxAgeSeconds": 604800, "maxEntries": 500 }
+    }),
+    'GET'
+);
+
+workbox.routing.registerRoute(
+    new RegExp('https://artist.mwonya.com/*'),
+    new workbox.strategies.StaleWhileRevalidate({
+        "cacheableResponse": { "statuses": [0, 200] },
+        "cacheExpiration": { "maxAgeSeconds": 604800, "maxEntries": 500 }
     }),
     'GET'
 );
