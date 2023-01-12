@@ -21,7 +21,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../Assets/style.css" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -100,7 +100,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
     </header>
 
     <section class="shop container">
-      <h2 class="section-title">Mwonya : African Entertainment Platform</h2>
+
 
       <!-- content -->
       <div class="shop-contenr">
@@ -117,6 +117,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
           <h1 class="col_title"><?= $album_title ?></h1>
           <p><?=$album_description ?></p>
+            <div class="songviewshareaction">
+                <a class="downloadbtn" href="https://play.google.com/store/apps/details?id=com.pkasemer.mwonyaa" target="_blank">Download The Mwonya App</a>
+            </div>
 
           <div class="details_box">
             <span class="details"><i class="bx bx-user iconLable"></i><?=$album_artist_name ?></span>
@@ -134,6 +137,6 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
       </div>
     </section>
 
-    <script src="../main.js"></script>
+    <script src="../Assets/main.js"></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
 RewriteEngine On    # Turn on the rewriting engine
-RewriteRule ^collection/(m_al[0-9a-zA-Z]*)$ collection.php?id=$1 [NC,L]
+RewriteRule ^collection/(m_[0-9a-zA-Z]*)$ collection.php?id=$1 [NC,L]
 RewriteRule ^collection$ collection.php [NC,L]
+RewriteRule ^track/([0-9_-]*)$ track.php?id=$1 [NC,L]
+RewriteRule ^track$ track.php [NC,L]
