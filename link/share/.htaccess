@@ -1,5 +1,15 @@
 RewriteEngine On    # Turn on the rewriting engine
 RewriteRule ^collection/(m_[0-9a-zA-Z]*)$ collection.php?id=$1 [NC,L]
 RewriteRule ^collection$ collection.php [NC,L]
+
+RewriteRule ^playlist/(mw[0-9a-zA-Z]*)$ playlist.php?id=$1 [NC,L]
+RewriteRule ^playlist$ playlist.php [NC,L]
+
+RewriteRule ^artist/(ma[0-9a-zA-Z]*)$ artist.php?id=$1 [NC,L]
+RewriteRule ^artist$ artist.php [NC,L]
+
+RewriteRule ^event/(mw_E[0-9a-zA-Z]*)$ event.php?id=$1 [NC,L]
+RewriteRule ^event$ event.php [NC,L]
+
 RewriteRule ^track/([0-9_-]*)$ track.php?id=$1 [NC,L]
 RewriteRule ^track$ track.php [NC,L]
