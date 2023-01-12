@@ -28,6 +28,7 @@ class Database
      */
     var $local = false;
 
+
     function getConnString()
     {
 

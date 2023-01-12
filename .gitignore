@@ -11,3 +11,4 @@ includes/config.php
 /storage/
 /vendor/
 /.env/
+includes/config.php
