@@ -8,7 +8,7 @@ RewriteRule ^playlist$ playlist.php [NC,L]
 RewriteRule ^artist/(ma[0-9a-zA-Z]*)$ artist.php?id=$1 [NC,L]
 RewriteRule ^artist$ artist.php [NC,L]
 
-RewriteRule ^event/(mw_E[0-9a-zA-Z]*)$ event.php?id=$1 [NC,L]
+RewriteRule ^event/(mw_e[0-9a-zA-Z]*)$ event.php?id=$1 [NC,L]
 RewriteRule ^event$ event.php [NC,L]
 
 RewriteRule ^track/([0-9_-]*)$ track.php?id=$1 [NC,L]

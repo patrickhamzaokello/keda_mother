@@ -49,7 +49,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
         <meta property="og:type" content="article">
         <meta property="og:title" content="<?= $song->getTitle() ?>">
         <meta property="og:description" content="<?= $artist->getName() ?> - <?= $song->getTag() ?> - <?= $song->getDateAdded() ?>. Click the link to Listen now on Mwonya Stream">
-        <meta property="og:url" content="https://www.mwonyaa.com/song?id=<?= $song->getId() ?>">
+        <meta property="og:url" content="https://mwonya.com/song?id=<?= $song->getId() ?>">
         <meta property="og:site_name" content="Mwonya Music">
         <meta property="article:published_time" content="<?= $song->getDateAdded() ?>">
         <meta property="article:modified_time" content="<?= $song->getDateAdded() ?>">
@@ -65,7 +65,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
         <meta property="og:type" content="website">
         <meta property="og:title" content="Mwonya: African Entertainment">
         <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
-        <meta property="og:url" content="https://www.mwonya.com/">
+        <meta property="og:url" content="https://mwonya.com/">
         <meta property="og:site_name" content="Mwonya Music">
         <meta property="article:published_time" content="02 Dec 2022">
         <meta property="article:modified_time" content="02 Dec 2022">
@@ -106,7 +106,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
                     alt="<?=$song_title ?>"
                     class="product-img"
             />
-            <a href="https://www.mwonya.com/song?id=<?= $song_id ?>" target="_blank" class="view_on">View on Mwonya</a>
+            <a href="https://mwonya.com/song?id=<?= $song_id ?>" target="_blank" class="view_on">View on Mwonya</a>
         </div>
 
         <div class="description">

@@ -189,8 +189,8 @@ header {
 .shop-contenr{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     grid-gap: 1.5rem;
-    align-items: center;
     box-shadow: 0 1px 4px hsl(0deg 4% 15% / 10%);
     padding: 1rem;
 }

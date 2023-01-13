@@ -59,8 +59,7 @@ class Artist
     public function getdateadded()
     {
         $phpdate = strtotime($this->dateAdded);
-        $mysqldate = date('d M Y', $phpdate);
-        // $mysqldate = date( 'd/M/Y H:i:s', $phpdate );
+        $mysqldate = date('d/M/Y', $phpdate);
 
         return $mysqldate;
     }

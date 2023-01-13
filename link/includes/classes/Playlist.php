@@ -9,14 +9,16 @@ class Playlist
 	private $name;
 	private $owner;
 	private $coverart;
+    private $description;
+    private $dateCreated;
+    private $featuredplaylist;
 
 
 
 
 	public function __construct($con, $data)
 	{
-		$results = [];
-		//code...
+
 		if (!is_array($data)) {
 
 			//data is a string
@@ -30,10 +32,9 @@ class Playlist
 			$this->name = $data['name'];
 			$this->owner = $data['owner'];
 			$this->coverart = $data['coverurl'];
-		} else {
-
-			echo "<p class='result slide-bck-center'>No Such Playlist Exists </p>";
-			exit;
+			$this->description = $data['description'];
+			$this->dateCreated = $data['dateCreated'];
+			$this->featuredplaylist = $data['featuredplaylist'];
 		}
 	}
 
@@ -63,6 +64,42 @@ class Playlist
 		$query = mysqli_query($this->con, "SELECT id, name FROM playlists WHERE id='$this->id' AND owner='$this->owner'");
 		return mysqli_num_rows($query);
 	}
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateCreated()
+    {
+        $phpdate = strtotime($this->dateCreated);
+        $mysqldate = date('d/M/Y', $phpdate);
+
+        return $mysqldate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFeaturedplaylist()
+    {
+        if($this->featuredplaylist == "yes"){
+            $this->featuredplaylist =   "Public";
+        } else {
+            $this->featuredplaylist =   "Private";
+
+        }
+        return $this->featuredplaylist;
+
+    }
+
+
 
 
 

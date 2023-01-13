@@ -31,44 +31,43 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
       require "../shareInclude.php";
       $track_id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
 
-      $album = new Album($con, $track_id);
-      $album_id = $album->getId();
-      $album_title = $album->getTitle();
-      $album_artist_name = $album->getArtist()->getName();
-      $album_genre = $album->getGenre()->getGenre();
-      $album_date = $album->getDatecreated();
-      $album_no_tracks = $album->getNumberOfSongs();
-      $album_artwork = $album->getArtworkPath();
-      $album_description = $album->getDescription();
-      $album_type = $album->getType();
-      $album_featured = $album->getFeatured();
-      $album_tag = $album->getTag();
+      $artist = new Artist($con, $track_id);
+      $artist_id = $artist->getId();
+      $artist_name= $artist->getName();
+      $artist_pic= $artist->getProfilePath();
+      $artist_description= $artist->getArtistBio();
+      $artist_total_tracks= $artist->getTotalSongs();
+      $artist_total_albums= $artist->getTotalablums();
+      $artist_tag= $artist->getTag();
+      $artist_genre= $artist->getGenrename();
+      $artist_date= $artist->getdateadded();
+
 
       ?>
 
-      <?php if ($album_title != null) : ?>
-          <title><?= $album_title ?> - <?= $album_artist_name ?></title>
+      <?php if ($artist_id != null) : ?>
+          <title><?= $artist_name ?> - Profile</title>
           <meta property="og:locale" content="en_US">
           <meta property="og:type" content="article">
-          <meta property="og:title" content="<?= $album_title ?>">
-          <meta property="og:description" content="<?= $album_artist_name ?> - <?= $album_no_tracks ?> tracks - <?= $album_date ?>. Stream this on demand at Mwonya">
-          <meta property="og:url" content="https://mwonya.com/album?id=<?= $album_id ?>">
+          <meta property="og:title" content="<?= $artist_name ?>">
+          <meta property="og:description" content="Listen to <?= $artist_name ?> on Mwonya. <?= $artist_description ?> tracks - <?= $artist_total_tracks ?>. Stream this on demand at Mwonya">
+          <meta property="og:url" content="https://mwonya.com/artist?id=<?= $artist_id ?>">
           <meta property="og:site_name" content="Mwonya Music">
-          <meta property="article:published_time" content="<?= $album_date ?>">
-          <meta property="article:modified_time" content="<?= $album_date ?>">
-          <meta property="og:update_time" content="<?= $album_date ?>">
-          <meta property="og:image" content="<?= $album_artwork ?>">
-          <meta property="og:image:secure_url" content="<?= $album_artwork ?>">
+          <meta property="article:published_time" content="<?= $artist_date ?>">
+          <meta property="article:modified_time" content="<?= $artist_date ?>">
+          <meta property="og:update_time" content="<?= $artist_date ?>">
+          <meta property="og:image" content="<?= $artist_pic ?>">
+          <meta property="og:image:secure_url" content="<?= $artist_pic ?>">
           <meta property="og:image:width" content="300">
           <meta property="og:image:height" content="300">
-          <meta property="og:image:alt" content="<?= $album_title ?> - <?= $album_artist_name ?>">
+          <meta property="og:image:alt" content="<?= $artist_name ?> - <?= $artist_name ?>">
       <?php else : ?>
           <title>Mwonya</title>
           <meta property="og:locale" content="en_US">
           <meta property="og:type" content="website">
           <meta property="og:title" content="Mwonya: African Entertainment">
           <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
-          <meta property="og:url" content="https://www.mwonya.com/">
+          <meta property="og:url" content="https://mwonya.com/">
           <meta property="og:site_name" content="Mwonya Music">
           <meta property="article:published_time" content="02 Dec 2022">
           <meta property="article:modified_time" content="02 Dec 2022">
@@ -106,30 +105,27 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
       <div class="shop-contenr">
         <div class="product-box">
           <img
-            src="<?=$album_artwork ?>"
-            alt="<?=$album_title ?>"
+            src="<?=$artist_pic ?>"
+            alt="<?=$artist_name ?>"
             class="product-img"
           />
-          <a href="https://www.mwonya.com/album?id=<?= $album_id ?>" target="_blank" class="view_on">View on Mwonya</a>
+          <a href="https://mwonya.com/artist?id=<?= $artist_id ?>" target="_blank" class="view_on">View on Mwonya</a>
         </div>
 
         <div class="description">
 
-          <h1 class="col_title"><?= $album_title ?></h1>
-          <p><?=$album_description ?></p>
+          <h1 class="col_title"><?= $artist_name ?></h1>
+          <p>Listen to <?= $artist_name ?> on Mwonya -  <?= $artist_description ?> Stream on demand at www.mwonya.com</p>
             <div class="songviewshareaction">
                 <a class="downloadbtn" href="https://play.google.com/store/apps/details?id=com.pkasemer.mwonyaa" target="_blank">Download The Mwonya App</a>
             </div>
 
           <div class="details_box">
-            <span class="details"><i class="bx bx-user iconLable"></i><?=$album_artist_name ?></span>
-            <span class="details"><i class="bx bx-music iconLable"></i><?=$album_genre ?></span>
-            <span class="details"><i class="bx bxl-deezer iconLable"></i><?=$album_tag ?></span>
-            <span class="details"><i class='bx bx-calendar iconLable'></i><?=$album_date?></span>
-            <span class="details"><i class='bx bx-signal-4 iconLable'></i><?=$album_no_tracks?></span>
-            <span class="details"><i class='bx bx-popsicle iconLable'></i><?=$album_featured ?></span>
-            <span class="details"><i class='bx bx-folder iconLable'></i><?=$album_type ?></span>
-  
+            <span class="details"><i class="bx bx-user iconLable"></i><?=$artist_genre ?></span>
+            <span class="details"><i class="bx bx-music iconLable"></i>Tracks <?=$artist_total_tracks ?></span>
+            <span class="details"><i class='bx bx-calendar iconLable'></i><?=$artist_date?></span>
+            <span class="details"><i class='bx bx-signal-4 iconLable'></i><?=$artist_tag?></span>
+
           </div>
        
         </div>

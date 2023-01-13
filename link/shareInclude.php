@@ -5,6 +5,7 @@ require "includes/classes/Album.php";
 require "includes/classes/Genre.php";
 require "includes/classes/Song.php";
 require "includes/classes/Playlist.php";
+require "includes/classes/Event.php";
 
 $db = new Database();
 $con = $db->getConnString();

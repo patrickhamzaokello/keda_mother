@@ -29,9 +29,9 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 
       <?php
       require "../shareInclude.php";
-      $track_id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
+      $collection_id = (isset($_GET['id']) && $_GET['id']) ? $_GET['id'] : '0';
 
-      $album = new Album($con, $track_id);
+      $album = new Album($con, $collection_id);
       $album_id = $album->getId();
       $album_title = $album->getTitle();
       $album_artist_name = $album->getArtist()->getName();
@@ -68,7 +68,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
           <meta property="og:type" content="website">
           <meta property="og:title" content="Mwonya: African Entertainment">
           <meta property="og:description" content="Mwonya Platform provides Music, Live Radio, Podcasts,Dj Mixes and Poems All available on the go and at your demand.">
-          <meta property="og:url" content="https://www.mwonya.com/">
+          <meta property="og:url" content="https://mwonya.com/">
           <meta property="og:site_name" content="Mwonya Music">
           <meta property="article:published_time" content="02 Dec 2022">
           <meta property="article:modified_time" content="02 Dec 2022">
@@ -110,7 +110,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
             alt="<?=$album_title ?>"
             class="product-img"
           />
-          <a href="https://www.mwonya.com/album?id=<?= $album_id ?>" target="_blank" class="view_on">View on Mwonya</a>
+          <a href="https://mwonya.com/album?id=<?= $album_id ?>" target="_blank" class="view_on">View on Mwonya</a>
         </div>
 
         <div class="description">
