@@ -8,29 +8,29 @@
 
 
 <url>
-  <loc>https://www.mwonyaa.com/</loc>
-  <lastmod>2021-03-19T22:14:07+00:00</lastmod>
+  <loc>https://mwonya.com/</loc>
+  <lastmod>2023-01-19T22:14:07+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.mwonyaa.com/mwonyacreate/index</loc>
-  <lastmod>2021-03-19T22:14:07+00:00</lastmod>
+  <loc>https://mwonya.com/library</loc>
+  <lastmod>2023-01-19T22:14:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.mwonyaa.com/register</loc>
-  <lastmod>2021-03-19T22:14:07+00:00</lastmod>
-  <priority>0.79</priority>
+  <loc>https://mwonya.com/podcasts</loc>
+  <lastmod>2023-01-19T22:14:07+00:00</lastmod>
+  <priority>0.60</priority>
 </url>
 <url>
-  <loc>https://www.mwonyaa.com/mwonyacreate/contentcreator</loc>
-  <lastmod>2021-03-19T22:14:07+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://mwonya.com/liveshows</loc>
+  <lastmod>2023-01-19T22:14:07+00:00</lastmod>
+  <priority>0.40</priority>
 </url>
 <url>
-  <loc>https://www.mwonyaa.com/index</loc>
-  <lastmod>2021-03-19T22:14:07+00:00</lastmod>
-  <priority>0.63</priority>
+  <loc>https://mwonya.com/shop</loc>
+  <lastmod>2023-01-19T22:14:07+00:00</lastmod>
+  <priority>0.20</priority>
 </url>
 
 
