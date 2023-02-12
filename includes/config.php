@@ -4,13 +4,6 @@ ob_start();
 
 session_start();
 
-// $timezone = date_default_timezone_set("Europe/London");
-
-// $con = mysqli_connect("localhost", "mwonyaAdmin", "UpjYTaZ8Lg#g", "mwonya");
-
-// $con = mysqli_connect("localhost", "root", "", "mwonya", 3306);
-
-
 class Database
 {
 

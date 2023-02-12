@@ -55,8 +55,8 @@ echo "<script>userLoggedIn = '$username'; isRegistered = '$userRegstatus'; curre
         gtag('config', 'G-YNG3P75VXH');
     </script>
 
-    <!-- <script data-ad-client="ca-pub-7169073185899705" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1261261563623757"
+     crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
